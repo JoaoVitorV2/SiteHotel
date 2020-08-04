@@ -44,3 +44,7 @@ async function imageSwitch(selected) {
 		}
 	}, 1050);
 }
+
+function quartosImageSwitch(type, image) {
+	document.getElementById("quartos").children[type].children[1].src = image;
+}

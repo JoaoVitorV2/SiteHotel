@@ -31,12 +31,12 @@
 							<div><h2>APARTAMENTO</h2></div>
 							<div>
 								<ul>
-									<li>Cama de casal</li>
+									<li onmouseover="javascript: quartosImageSwitch(0, 'imagens/apartamento_cama.jpg');" onmouseout="javascript: quartosImageSwitch(0, 'imagens/apartamento.jpg');">Cama de casal</li>
 									<li>Banheiro</li>
 									<li>TV</li>
 									<li>Frigobar</li>
 									<li>Climatizador de ar</li>
-									<li>Café da manhã incluso</li>
+									<li onmouseover="javascript: quartosImageSwitch(0, 'imagens/cafe.jpg');" onmouseout="javascript: quartosImageSwitch(0, 'imagens/apartamento.jpg');">Café da manhã incluso</li>
 								</ul>
 							</div>
 						</div>
@@ -47,8 +47,8 @@
 							<div><h2>QUARTO<br />STANDARD</h2></div>
 							<div>
 								<ul>
-									<li>TV</li>
-									<li>Café da manhã incluso</li>
+									<li onmouseover="javascript: quartosImageSwitch(1, 'imagens/quarto_tv.jpg');" onmouseout="javascript: quartosImageSwitch(1, 'imagens/quarto.jpg');">TV</li>
+									<li onmouseover="javascript: quartosImageSwitch(1, 'imagens/cafe.jpg');" onmouseout="javascript: quartosImageSwitch(1, 'imagens/quarto.jpg');">Café da manhã incluso</li>
 								</ul>
 							</div>
 						</div>
@@ -73,12 +73,12 @@
 					O hotel fica em local calmo, no centro de Nova Araçá.
 				</div>
 				<iframe style="height:100%;width:100%;" id="gmap_canvas" src='https://maps.google.com/maps?q=Alvi%20Hotel&t=&z=16&ie=UTF8&iwloc=&output=embed' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-			</div>-->
+			</div>
 			<div class="page" style="font-size:xx-large;">
 				<div style="margin-top:auto;margin-bottom:auto;width:100%;text-align:center;">
 					Faça sua reserva pelo telefone<br /><a href="tel:+555432751263" style="text-decoration:none;color:initial;">(54)3275-1263</a><br />ou pelo e-mail<br /><a href="mailto:atendimento@hotelalvi.com.br">atendimento@hotelalvi.com.br</a>
 				</div>
-			</div>
+			</div>-->
 		</div>
 		<div id="currentPageIndicator">
 			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[0].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>INÍCIO</div></div>
@@ -86,7 +86,6 @@
 			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[2].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>SALA</div></div>
 			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[3].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>RESTAURANTE</div></div>
 			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[4].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>CONTATO</div></div>
-			</div>
 		</div>
 		<div class="buttonContainer" id="scrollToTopButton" onclick="javascript: window.scrollTo({top:0, behavior: 'smooth'});">
 			<div style="width:90%;">
