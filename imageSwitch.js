@@ -45,6 +45,20 @@ async function imageSwitch(selected) {
 	}, 1050);
 }
 
-function quartosImageSwitch(type, image) {
+var quartosOriginalImage = ["imagens/apartamento.jpg", "imagens/quarto.jpg"];
+var quartosFixedImage = ["imagens/apartamento.jpg", "imagens/quarto.jpg"]; //using variable will copy by reference
+function quartosImageSwitch(type, image = quartosFixedImage[type]) { //no argument = reset to fixed image
 	document.getElementById("quartos").children[type].children[1].src = image;
+}
+function quartosImageFix(type, image) {
+	quartosFixedImage[type] = image;
+	quartosImageSwitch(type, image);
+	quartosExpand(type);
+}
+function quartosImageReset() {
+	for (var i = 0; i < quartosOriginalImage.length; i++) {
+		quartosFixedImage[i] = quartosOriginalImage[i].valueOf();
+		quartosImageSwitch(i);
+	}
+	
 }

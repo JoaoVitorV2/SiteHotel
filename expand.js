@@ -6,7 +6,7 @@ function initializeExpand(){
 	quartosPage = document.getElementById("quartos");
 }
 
-function expandQuartos(side) {
+function quartosExpand(side) {
 	quartosPage.parentElement.children[0].style.setProperty("display", "initial");
 	for (var i = 0; i < quartosPage.children.length; i++) {
 		var currentDiv = quartosPage.children[i];
@@ -25,7 +25,7 @@ function expandQuartos(side) {
 	}
 }
 
-function restoreQuartos() {
+function quartosRestore() {
 	quartosPage.parentElement.children[0].style.setProperty("display", "none");
 	for (var i = 0; i < quartosPage.children.length; i++) {
 		var currentDiv = quartosPage.children[i];
@@ -39,5 +39,7 @@ function restoreQuartos() {
 		currentDiv.children[1].style.setProperty("border-left-style", "none");
 		currentDiv.children[1].style.setProperty("cursor", "pointer");
 		currentDiv.children[0].children[1].children[0].style.setProperty("columns", "2");
+		
 	}
+	quartosImageReset();
 }

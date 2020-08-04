@@ -22,7 +22,7 @@
 				<p>Venha desfrutar de nossas instalações!</p>
 			</div>
 			<div class="page">
-				<div class="backButton" onclick="javascript: restoreQuartos();">
+				<div class="backButton" onclick="javascript: quartosRestore();">
 					<img src="imagens/voltar.png"/>  VOLTAR
 				</div>
 				<div id="quartos">
@@ -31,28 +31,28 @@
 							<div><h2>APARTAMENTO</h2></div>
 							<div>
 								<ul>
-									<li onmouseover="javascript: quartosImageSwitch(0, 'imagens/apartamento_cama.jpg');" onmouseout="javascript: quartosImageSwitch(0, 'imagens/apartamento.jpg');">Cama de casal</li>
+									<li onmouseover="quartosImageSwitch(0, 'imagens/apartamento_cama.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento_cama.jpg');">Cama de casal</li>
 									<li>Banheiro</li>
-									<li>TV</li>
-									<li>Frigobar</li>
-									<li>Climatizador de ar</li>
-									<li onmouseover="javascript: quartosImageSwitch(0, 'imagens/cafe.jpg');" onmouseout="javascript: quartosImageSwitch(0, 'imagens/apartamento.jpg');">Café da manhã incluso</li>
+									<li onmouseover="quartosImageSwitch(0, 'imagens/apartamento.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento.jpg');">TV</li>
+									<li onmouseover="quartosImageSwitch(0, 'imagens/apartamento.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento.jpg');">Frigobar</li>
+									<li onmouseover="quartosImageSwitch(0, 'imagens/apartamento.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento.jpg');">Climatizador de ar</li>
+									<li onmouseover="quartosImageSwitch(0, 'imagens/cafe.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/cafe.jpg');">Café da manhã incluso</li>
 								</ul>
 							</div>
 						</div>
-						<img src="imagens/apartamento.jpg" onclick="javascript: expandQuartos(0);" />
+						<img src="imagens/apartamento.jpg" onclick="javascript: quartosExpand(0);" />
 					</div>
 					<div>
 						<div>
 							<div><h2>QUARTO<br />STANDARD</h2></div>
 							<div>
 								<ul>
-									<li onmouseover="javascript: quartosImageSwitch(1, 'imagens/quarto_tv.jpg');" onmouseout="javascript: quartosImageSwitch(1, 'imagens/quarto.jpg');">TV</li>
-									<li onmouseover="javascript: quartosImageSwitch(1, 'imagens/cafe.jpg');" onmouseout="javascript: quartosImageSwitch(1, 'imagens/quarto.jpg');">Café da manhã incluso</li>
+									<li onmouseover="quartosImageSwitch(1, 'imagens/quarto_tv.jpg');" onmouseout="quartosImageSwitch(1);" onclick="quartosImageFix(1, 'imagens/quarto_tv.jpg');">TV</li>
+									<li onmouseover="quartosImageSwitch(1, 'imagens/cafe.jpg');" onmouseout="quartosImageSwitch(1);" onclick="quartosImageFix(1, 'imagens/cafe.jpg');">Café da manhã incluso</li>
 								</ul>
 							</div>
 						</div>
-						<img src="imagens/quarto.jpg" onclick="javascript: expandQuartos(1);" />
+						<img src="imagens/quarto.jpg" onclick="javascript: quartosExpand(1);" />
 					</div>
 				</div>
 			</div>
