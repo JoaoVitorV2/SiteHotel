@@ -1,0 +1,40 @@
+@-webkit-keyframes select {
+    0% {
+        background-size: 300% 100%;
+        background-image: linear-gradient(to right, white, rgb(160,160,160) 33%, white 34%, white 100%);
+        background-position: 50%;
+    }
+
+    100% {
+        background-position: -200%;
+    }
+}
+
+@keyframes select{
+    0% {
+        background-size:300% 100%;
+        background-image: linear-gradient(to right, white, rgb(160,160,160) 33%, white 34%, white 100%);
+        background-position:50%;
+    }
+    100% {
+        background-position:-200%;
+    }
+}
+
+@keyframes flip{
+    0%{
+        width:100%;
+    }
+    50%{
+        width:0;
+    }
+    100%{
+        width:100%;
+    }
+}
+
+@keyframes fade{
+    0%{color:#000000}
+    50%{color:#FFFFFF}
+    100%{color:#000000}
+}

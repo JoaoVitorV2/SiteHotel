@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--adicionar meta tags-->
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="stylesheet" type="text/css" href="animations.css" />
+	<script src="imageSwitch.js"></script>
+	<script src="scroll.js"></script>
+	<script src="expand.js"></script>
+</head>
+	<body>
+		<div class="verticalContainer" id="mainContainer">
+			<img src="imagens/logo.jpg" id="logo">
+			<div class="buttonContainer" id="navbar">
+				<div onclick="javascript: document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'center'});"><span>CONHEÇA</span></div>
+				<div onclick="javascript: document.getElementsByClassName('page')[document.getElementsByClassName('page').length-1].scrollIntoView({ behavior: 'smooth', block: 'center' });"><span>CONTATO</span></div>
+			</div>
+			<div class="page verticalContainer textContainer" style="padding:0;font-size:xx-large;">
+				<p>Para quem procura um ambiente aconchegante e ótima qualidade de atendimento sem abrir mão da economia, o Hotel Alvi é o lugar ideal para se hospedar.</p>
+				<p>Dispõe de acomodações com TV e Wi-Fi para os hóspedes, além de café da manhã e restaurante.</p>
+				<p>O Hotel Alvi está no ramo há 20 anos, localizado em local calmo no centro de Nova Araçá, possui garagem semi-aberta e recepção com lareira.</p>
+				<p>Venha desfrutar de nossas instalações!</p>
+			</div>
+			<div class="page">
+				<div class="backButton" onclick="javascript: restoreQuartos();">
+					<img src="imagens/voltar.png"/>  VOLTAR
+				</div>
+				<div id="quartos">
+					<div>
+						<div>
+							<div><h2>APARTAMENTO</h2></div>
+							<div>
+								<ul>
+									<li>Cama de casal</li>
+									<li>Banheiro</li>
+									<li>TV</li>
+									<li>Frigobar</li>
+									<li>Climatizador de ar</li>
+									<li>Café da manhã incluso</li>
+								</ul>
+							</div>
+						</div>
+						<img src="imagens/apartamento.jpg" onclick="javascript: expandQuartos(0);" />
+					</div>
+					<div>
+						<div>
+							<div><h2>QUARTO<br />STANDARD</h2></div>
+							<div>
+								<ul>
+									<li>TV</li>
+									<li>Café da manhã incluso</li>
+								</ul>
+							</div>
+						</div>
+						<img src="imagens/quarto.jpg" onclick="javascript: expandQuartos(1);" />
+					</div>
+				</div>
+			</div>
+			<div class="page">
+				<div class="verticalContainer textContainer" style="flex-grow:1;align-self:center;padding:3px;">
+					<p>Donec diam leo, fermentum id neque non, lacinia porttitor mi.</p><p>Phasellus ac arcu fermentum, laoreet justo ac, pellentesque elit.</p><p>Vestibulum fermentum arcu non sodales dapibus.</p>
+				</div>
+				<img src="imagens/sala.jpg" style="height:100%;border-left:solid thin;"/>
+			</div>
+			<div class="page">
+				<div class="verticalContainer textContainer" style="flex-grow:1;align-self:center;padding:3px;">
+					<p>Donec diam leo, fermentum id neque non, lacinia porttitor mi.</p><p>Phasellus ac arcu fermentum, laoreet justo ac, pellentesque elit.</p><p>Vestibulum fermentum arcu non sodales dapibus.</p>
+				</div>
+				<img src="imagens/restaurante.jpg" style="height:100%;border-left:solid thin;" />
+			</div>
+			<!--<div class="page" style="display:flex;justify-content:space-between;">
+				<div style="margin:10px;">
+					O hotel fica em local calmo, no centro de Nova Araçá.
+				</div>
+				<iframe style="height:100%;width:100%;" id="gmap_canvas" src='https://maps.google.com/maps?q=Alvi%20Hotel&t=&z=16&ie=UTF8&iwloc=&output=embed' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			</div>-->
+			<div class="page" style="font-size:xx-large;">
+				<div style="margin-top:auto;margin-bottom:auto;width:100%;text-align:center;">
+					Faça sua reserva pelo telefone<br /><a href="tel:+555432751263" style="text-decoration:none;color:initial;">(54)3275-1263</a><br />ou pelo e-mail<br /><a href="mailto:atendimento@hotelalvi.com.br">atendimento@hotelalvi.com.br</a>
+				</div>
+			</div>
+		</div>
+		<div id="currentPageIndicator">
+			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[0].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>INÍCIO</div></div>
+			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>QUARTOS</div></div>
+			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[2].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>SALA</div></div>
+			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[3].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>RESTAURANTE</div></div>
+			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[4].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>CONTATO</div></div>
+			</div>
+		</div>
+		<div class="buttonContainer" id="scrollToTopButton" onclick="javascript: window.scrollTo({top:0, behavior: 'smooth'});">
+			<div style="width:90%;">
+				Voltar para o topo.
+			</div>
+		</div>
+		<footer>
+			Logo endereço telefone e-mail
+		</footer>
+	</body>
+</html>
