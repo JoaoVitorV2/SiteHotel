@@ -1,46 +1,45 @@
-var foto;
-var fotoContainer;
-var textoImagem;
-var queued = -1;
-var current = 1;
-document.addEventListener('DOMContentLoaded', initializeIS);
+var restauranteFoto;
+var restauranteTexto;
 
-var fotos = ['imagens/quarto.jpg', 'imagens/sala.jpg', 'imagens/restaurante.jpg'];
-var textos = [
-	"TEXTO QUARTO",
-	"TEXTO SALA",
-	"TEXTO RESTAURANTE"
+document.addEventListener('DOMContentLoaded', restauranteInitialize);
+
+var restauranteFotos = ['imagens/restaurante.jpg', 'imagens/cafe.jpg', 'imagens/janta.jpg'];
+var restauranteTextos = [
+	"TEXTO RESTAURANTE",
+	"TEXTO CAFE",
+	"TEXTO JANTA"
 ];
 
-function initializeIS() {
-	foto = document.getElementById('foto');
-	fotoContainer = document.getElementById('fotoContainer');
-	textoImagem = document.getElementById('textoImagem');
+function restauranteInitialize() {
+	restauranteFoto = document.getElementById('restauranteFoto');
+	restauranteTexto = document.getElementById('restauranteTexto');
 }
 
-async function imageSwitch(selected) {
-	if (fotoContainer.style.getPropertyValue('animation')!=0) {
-		queued = selected;
+var restauranteQueued = -1;
+var restauranteCurrent = 0;
+async function restauranteImageSwitch(selected) {
+	if (restauranteFoto.style.getPropertyValue('animation')!=0) {
+		restauranteQueued = selected;
 		return;
 	} else {
-		if (current == selected) return;
-		fotoContainer.style.setProperty('animation', 'flip 1s 1');
-		textoImagem.style.setProperty('animation', 'fade 1s 1');
-		current = selected;
+		if (restauranteCurrent == selected) return;
+		restauranteFoto.style.setProperty('animation', 'flip 1s 1');
+		restauranteTexto.style.setProperty('animation', 'fade 1s 1');
+		restauranteCurrent = selected;
 		setTimeout(function () {
-			foto.src = fotos[selected];
-			textoImagem.innerHTML = textos[selected];
+			restauranteFoto.src = restauranteFotos[selected];
+			restauranteTexto.innerHTML = restauranteTextos[selected];
 		}, 500);
 	}
-	setTimeout(function () { fotoContainer.style.removeProperty('animation'); }, 1000);
-	setTimeout(function () { textoImagem.style.removeProperty('animation'); }, 1000);
+	setTimeout(function () { restauranteFoto.style.removeProperty('animation'); }, 1000);
+	setTimeout(function () { restauranteTexto.style.removeProperty('animation'); }, 1000);
 	setTimeout(function () {
-		if (queued == -1) {
+		if (restauranteQueued == -1) {
 			return;
 		} else {
-			var queuedTemp = queued;
-			queued = -1;
-			imageSwitch(queuedTemp);
+			var queuedTemp = restauranteQueued;
+			restauranteQueued = -1;
+			restauranteImageSwitch(queuedTemp);
 		}
 	}, 1050);
 }

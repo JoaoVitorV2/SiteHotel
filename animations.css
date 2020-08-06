@@ -10,7 +10,7 @@
     }
 }
 
-@keyframes select{
+@keyframes swipeBackground{
     0% {
         background-size:300% 100%;
         background-image: linear-gradient(to right, white, rgb(160,160,160) 33%, white 34%, white 100%);

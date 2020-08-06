@@ -8,7 +8,7 @@
 .textContainer {
 	text-align: center;
 	font-size: larger;
-	justify-content: space-between;
+	justify-content: space-around;
 	padding: 4px;
 }
 
@@ -30,17 +30,29 @@
 	padding:0;
 	display:flex;
 	flex-direction:column;
+	justify-items:stretch;
+	justify-content:stretch;
 }
 .buttonList > div{
-	border-style:solid;
+	border-style:solid none;
 	border-width:thick;
 	border-color:#FFFFFF;
 	text-align:center;
+	flex-grow:1;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.buttonList > div:first-child{
+	border-top-style:none;
+}
+.buttonList > div:last-child{
+	border-bottom-style:none;
 }
 .buttonList > div:hover{
 	border-color:#000000;
 	-webkit-animation: select 1s 1;
-	animation-name:"select";
+	animation-name: "swipeBackground";
 	animation-duration:1.5s;
 	cursor:pointer;
 }
@@ -146,32 +158,29 @@
 #quartos > div > * > * > ul{
 	columns:2;
 }
+#quartos > div > * > * > ul > li{
+	user-select:none;
+}
+#quartos > div > * > * > ul > li:hover{
+	cursor:pointer;
+	text-decoration-line:underline;
+}
 #quartos > div > * > * > h2{
 	padding:0;
 	margin:0;
 }
 
-#conhecaButtonList {
-	width:25%;
-	border-right-color:#000000;
-	border-right-style:solid;
-	border-right-width:thick;
+#restaurante > div {
+	border-right: solid;
 }
-#conhecaButtonList > div{
-	height:33%;
-	border-left-width:0;
-	border-right-width:0;
+#restaurante > div:first-child{
+	min-width:15%;
+	flex-grow:1;
 }
-#conhecaButtonList > div:first-child{
-	border-top-width:0;
-}
-#conhecaButtonList > div:last-child{
-	border-bottom-width:0;
-}
-#conhecaButtonList > div {
-	display:flex;
-	justify-content:center;
-	align-items:center;
+#restaurante > div:last-child{
+	min-width:15%;
+	border-right: none;
+	flex-grow:5;
 }
 
 #currentPageIndicator{
