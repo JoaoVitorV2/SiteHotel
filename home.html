@@ -24,7 +24,11 @@
 			</div>
 			<div class="page">
 				<div class="backButton" onclick="javascript: quartosRestore();">
-					<img src="imagens/voltar.png"/>  VOLTAR
+					<svg viewBox="0 0 100 100" height="1em" width="1em">
+						<circle cx="50" cy="50" r="45" stroke="#000000" stroke-width="10" fill="#FFFFFF" />
+						<polygon points="20,50 50,30 50,45, 80,45 80,55 50,55 50,70" fill="#000000" stroke-width="0" />
+					</svg>
+					VOLTAR
 				</div>
 				<div id="quartos">
 					<div>
@@ -72,18 +76,14 @@
 				</div>
 				<div style="position:relative;display:flex;justify-content:center;width:100vh;flex-shrink:0;"> <!--Width is 80vh(height)*1,25(aspect ratio).-->
 					<img src="imagens/restaurante.jpg" id="comidaImage" style="height:100%;width:100%;" />
-					<div class="selectImageButton selectImageButton__next comidaImageButton" id="comidaNextButton" onclick="comidaImageSwitch(1);">
-						<svg width="100%" height="100%">
-							<line x1="10%" y1="50%" x2="90%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
-							<line x1="70%" y1="40%" x2="90%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
-							<line x1="70%" y1="60%" x2="90%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
+					<div class="selectImageButton selectImageButton__next comidaImageButton" onclick="comidaImageSwitch(1);">
+						<svg width="100%" height="100%" viewBox="0 0 100 100">
+							<polygon points="90,50 70,35 70,45 10,45 10,55 70,55 70,65" fill="#000000" stroke-width="0" />
 						</svg>
 					</div>
 					<div class="selectImageButton selectImageButton__previous comidaImageButton" onclick="comidaImageSwitch(-1);">
-						<svg width="100%" height="100%">
-							<line x1="10%" y1="50%" x2="90%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
-							<line x1="30%" y1="40%" x2="10%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
-							<line x1="30%" y1="60%" x2="10%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
+						<svg width="100%" height="100%" viewBox="0 0 100 100">
+							<polygon points="10,50 30,35 30,45 90,45 90,55 30,55 30,65" fill="#000000" stroke-width="0" />
 						</svg>
 					</div>
 				</div>
