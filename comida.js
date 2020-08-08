@@ -22,11 +22,11 @@ class ImageSwitcher {
 	}
 }
 
-let sections = new Array(3);
+let comidaSections = new Array(3);
 
 function initialize() {
-	sections[1] = new ImageSwitcher("comida", ["imagens/cafe.jpg", "imagens/cafe2.jpg"]);
-	sections[2] = new ImageSwitcher("comida", ["imagens/janta.jpg", "imagens/janta2.jpg"]);
+	comidaSections[1] = new ImageSwitcher("comida", ["imagens/cafe.jpg", "imagens/cafe2.jpg"]);
+	comidaSections[2] = new ImageSwitcher("comida", ["imagens/janta.jpg", "imagens/janta2.jpg"]);
 }
 
 var comidaQueued = -1;
@@ -70,6 +70,6 @@ function comidaImageSwitch(direction) {
 	if (comidaCurrent == 0) {
 		console.error("Multiple images disabled for current item.");
 	} else {
-		sections[comidaCurrent].change(direction);
+		comidaSections[comidaCurrent].change(direction);
 	}
 }
