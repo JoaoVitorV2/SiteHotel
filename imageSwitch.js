@@ -15,44 +15,6 @@ function restauranteInitialize() {
 	comidaText = document.getElementById('comidaText');
 }
 
-var comidaQueued = -1;
-var comidaCurrent = 0;
-async function comidaCategorySwitch(selected) {
-	if (comidaImage.style.getPropertyValue('animation')!=0) {
-		comidaQueued = selected;
-		return;
-	} else {
-		if (comidaCurrent == selected) return;
-		comidaImage.style.setProperty('animation', 'flip 1s 1');
-		comidaText.style.setProperty('animation', 'fade 1s 1');
-		comidaCurrent = selected;
-		setTimeout(function () {
-			comidaImage.src = restauranteFotos[selected];
-			comidaText.innerHTML = restauranteTextos[selected];
-		}, 500);
-
-		document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "none");
-		document.getElementsByClassName("comidaImageButton")[1].style.setProperty("display", "none");
-		if (selected != 0) { //selected=0 has only one image
-			setTimeout(function () {
-				document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "initial");
-				document.getElementsByClassName("comidaImageButton")[1].style.setProperty("display", "initial");
-			}, 1000);
-		}
-	}
-	setTimeout(function () { comidaImage.style.removeProperty('animation'); }, 1000);
-	setTimeout(function () { comidaText.style.removeProperty('animation'); }, 1000);
-	setTimeout(function () {
-		if (comidaQueued == -1) {
-			return;
-		} else {
-			var queuedTemp = comidaQueued;
-			comidaQueued = -1;
-			comidaCategorySwitch(queuedTemp);
-		}
-	}, 1050);
-}
-
 var quartosOriginalImage = ["imagens/apartamento.jpg", "imagens/quarto.jpg"];
 var quartosFixedImage = ["imagens/apartamento.jpg", "imagens/quarto.jpg"]; //using variable will copy by reference
 function quartosImageSwitch(type, image = quartosFixedImage[type]) { //no argument = reset to fixed image
@@ -61,8 +23,8 @@ function quartosImageSwitch(type, image = quartosFixedImage[type]) { //no argume
 function quartosImageFix(type, image) {
 	if (image == quartosFixedImage[type] && image == 'imagens/cafe.jpg') {
 		comidaCategorySwitch(1);
-		setTimeout(function () { document.getElementById("comida").scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 200);
-		setTimeout(quartosRestore, 250);
+		setTimeout(function () { document.getElementById("comida").scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 80);
+		setTimeout(quartosRestore, 300);
 		
 	} else {
 		quartosFixedImage[type] = image;

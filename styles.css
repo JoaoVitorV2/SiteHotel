@@ -78,7 +78,7 @@
 }
 
 .backButton {
-	display: none;
+	display: none; /*flex*/
 	position: absolute;
 	margin-left: 15px;
 	margin-top: 15px;
@@ -87,6 +87,7 @@
 	border-width: thin;
 	border-radius: 8px;
 	padding:2px;
+	align-items:center;
 }
 .backButton > img{
 	display:inline;
@@ -113,6 +114,7 @@
 }
 .selectImageButton__previous{
 	left:0;
+	transform: scaleX(-1);
 }
 
 .comidaImageButton {
