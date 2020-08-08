@@ -60,9 +60,10 @@ function quartosImageSwitch(type, image = quartosFixedImage[type]) { //no argume
 }
 function quartosImageFix(type, image) {
 	if (image == quartosFixedImage[type] && image == 'imagens/cafe.jpg') {
-		setTimeout(function () { document.getElementById("comida").scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 200);
 		comidaCategorySwitch(1);
-		quartosImageReset();
+		setTimeout(function () { document.getElementById("comida").scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 200);
+		setTimeout(quartosRestore, 250);
+		
 	} else {
 		quartosFixedImage[type] = image;
 		quartosImageSwitch(type, image);
