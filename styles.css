@@ -195,14 +195,14 @@
 	margin:0;
 }
 
-#restaurante > div {
+#comida > div {
 	border-right: solid;
 }
-#restaurante > div:first-child{
+#comida > div:first-child{
 	min-width:15%;
 	flex-grow:1;
 }
-#restaurante > div:last-child{
+#comida > div:last-child{
 	min-width:15%;
 	border-right: none;
 	flex-grow:5;

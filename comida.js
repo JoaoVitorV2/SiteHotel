@@ -28,8 +28,8 @@ var comidaSections = new Array(3);
 document.addEventListener('DOMContentLoaded', comidaInitialize);
 
 function comidaInitialize() {
-	comidaSections[1] = new ImageSwitcher("restaurante", ["imagens/cafe.jpg", "imagens/cafe2.jpg"]);
-	comidaSections[2] = new ImageSwitcher("restaurante", ["imagens/janta.jpg", "imagens/janta2.jpg"]);
+	comidaSections[1] = new ImageSwitcher("comida", ["imagens/cafe.jpg", "imagens/cafe2.jpg"]);
+	comidaSections[2] = new ImageSwitcher("comida", ["imagens/janta.jpg", "imagens/janta2.jpg"]);
 }
 
 function comidaImageSwitch(direction) {

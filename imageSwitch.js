@@ -59,9 +59,15 @@ function quartosImageSwitch(type, image = quartosFixedImage[type]) { //no argume
 	document.getElementById("quartos").children[type].children[1].src = image;
 }
 function quartosImageFix(type, image) {
-	quartosFixedImage[type] = image;
-	quartosImageSwitch(type, image);
-	quartosExpand(type);
+	if (image == quartosFixedImage[type] && image == 'imagens/cafe.jpg') {
+		setTimeout(function () { document.getElementById("comida").scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 200);
+		comidaCategorySwitch(1);
+		quartosImageReset();
+	} else {
+		quartosFixedImage[type] = image;
+		quartosImageSwitch(type, image);
+		quartosExpand(type);
+	}
 }
 function quartosImageReset() {
 	for (var i = 0; i < quartosOriginalImage.length; i++) {
