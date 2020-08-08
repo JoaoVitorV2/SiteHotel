@@ -94,6 +94,31 @@
 	bottom:0;
 }
 
+.selectImageButton{
+	width:7.5%;
+	height:25%;
+	position:absolute;
+	top:37.5%;
+	z-index:1;
+	background-color:#303030;
+	opacity:0.35;
+	cursor:pointer;
+}
+.selectImageButton:hover {
+	opacity: 0.55;
+	background-color: #404040;
+}
+.selectImageButton__next{
+	right: 0;
+}
+.selectImageButton__previous{
+	left:0;
+}
+
+.comidaImageButton {
+	display: none;
+}
+
 #mainContainer {
 	margin-left:12.5%;
 	width: 75%;

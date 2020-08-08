@@ -7,6 +7,7 @@
 	<script src="imageSwitch.js"></script>
 	<script src="scroll.js"></script>
 	<script src="expand.js"></script>
+	<script src="comida.js"></script>
 </head>
 	<body>
 		<div class="verticalContainer" id="mainContainer">
@@ -64,15 +65,29 @@
 			</div>
 			<div class="page" id="restaurante">
 				<div class="buttonList" style="height:100%;border-right-width:thick;">
-					<div onclick="javascript:restauranteImageSwitch(0);"><div>RESTAURANTE</div></div>
-					<div onclick="javascript:restauranteImageSwitch(1);"><div>CAFÉ DA MANHÃ</div></div>
-					<div onclick="javascript:restauranteImageSwitch(2);"><div>JANTA</div></div>
+					<div onclick="comidaCategorySwitch(0);"><div>RESTAURANTE</div></div>
+					<div onclick="comidaCategorySwitch(1);"><div>CAFÉ DA MANHÃ</div></div>
+					<div onclick="comidaCategorySwitch(2);"><div>JANTA</div></div>
 
 				</div>
-				<div style="display:flex;justify-content:center;width:100vh;flex-shrink:0;"> <!--Width is 80vh(height)*1,25(aspect ratio).-->
-					<img src="imagens/restaurante.jpg" id="restauranteFoto" style="height:100%;width:100%;" />
+				<div style="position:relative;display:flex;justify-content:center;width:100vh;flex-shrink:0;"> <!--Width is 80vh(height)*1,25(aspect ratio).-->
+					<img src="imagens/restaurante.jpg" id="comidaImage" style="height:100%;width:100%;" />
+					<div class="selectImageButton selectImageButton__next comidaImageButton" id="comidaNextButton" onclick="comidaImageSwitch(1);">
+						<svg width="100%" height="100%">
+							<line x1="10%" y1="50%" x2="90%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
+							<line x1="70%" y1="40%" x2="90%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
+							<line x1="70%" y1="60%" x2="90%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
+						</svg>
+					</div>
+					<div class="selectImageButton selectImageButton__previous comidaImageButton" onclick="comidaImageSwitch(-1);">
+						<svg width="100%" height="100%">
+							<line x1="10%" y1="50%" x2="90%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
+							<line x1="30%" y1="40%" x2="10%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
+							<line x1="30%" y1="60%" x2="10%" y2="50%" style="stroke:#000000;stroke-width:3%;stroke-opacity:1;" />
+						</svg>
+					</div>
 				</div>
-				<div id="restauranteTexto" class="verticalContainer textContainer" style="height:100%;">
+				<div id="comidaText" class="verticalContainer textContainer" style="height:100%;">
 					TEXTO
 				</div>
 			</div>

@@ -1,5 +1,5 @@
-var restauranteFoto;
-var restauranteTexto;
+var comidaImage;
+var comidaText;
 
 document.addEventListener('DOMContentLoaded', restauranteInitialize);
 
@@ -11,35 +11,44 @@ var restauranteTextos = [
 ];
 
 function restauranteInitialize() {
-	restauranteFoto = document.getElementById('restauranteFoto');
-	restauranteTexto = document.getElementById('restauranteTexto');
+	comidaImage = document.getElementById('comidaImage');
+	comidaText = document.getElementById('comidaText');
 }
 
-var restauranteQueued = -1;
-var restauranteCurrent = 0;
-async function restauranteImageSwitch(selected) {
-	if (restauranteFoto.style.getPropertyValue('animation')!=0) {
-		restauranteQueued = selected;
+var comidaQueued = -1;
+var comidaCurrent = 0;
+async function comidaCategorySwitch(selected) {
+	if (comidaImage.style.getPropertyValue('animation')!=0) {
+		comidaQueued = selected;
 		return;
 	} else {
-		if (restauranteCurrent == selected) return;
-		restauranteFoto.style.setProperty('animation', 'flip 1s 1');
-		restauranteTexto.style.setProperty('animation', 'fade 1s 1');
-		restauranteCurrent = selected;
+		if (comidaCurrent == selected) return;
+		comidaImage.style.setProperty('animation', 'flip 1s 1');
+		comidaText.style.setProperty('animation', 'fade 1s 1');
+		comidaCurrent = selected;
 		setTimeout(function () {
-			restauranteFoto.src = restauranteFotos[selected];
-			restauranteTexto.innerHTML = restauranteTextos[selected];
+			comidaImage.src = restauranteFotos[selected];
+			comidaText.innerHTML = restauranteTextos[selected];
 		}, 500);
+
+		document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "none");
+		document.getElementsByClassName("comidaImageButton")[1].style.setProperty("display", "none");
+		if (selected != 0) { //selected=0 has only one image
+			setTimeout(function () {
+				document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "initial");
+				document.getElementsByClassName("comidaImageButton")[1].style.setProperty("display", "initial");
+			}, 1000);
+		}
 	}
-	setTimeout(function () { restauranteFoto.style.removeProperty('animation'); }, 1000);
-	setTimeout(function () { restauranteTexto.style.removeProperty('animation'); }, 1000);
+	setTimeout(function () { comidaImage.style.removeProperty('animation'); }, 1000);
+	setTimeout(function () { comidaText.style.removeProperty('animation'); }, 1000);
 	setTimeout(function () {
-		if (restauranteQueued == -1) {
+		if (comidaQueued == -1) {
 			return;
 		} else {
-			var queuedTemp = restauranteQueued;
-			restauranteQueued = -1;
-			restauranteImageSwitch(queuedTemp);
+			var queuedTemp = comidaQueued;
+			comidaQueued = -1;
+			comidaCategorySwitch(queuedTemp);
 		}
 	}, 1050);
 }
