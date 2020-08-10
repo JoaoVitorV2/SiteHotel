@@ -1,8 +1,9 @@
-document.addEventListener('DOMContentLoaded', quartosInitialize);
-
+/*document.addEventListener('DOMContentLoaded', quartosInitialize);
 function quartosInitialize() {
 	quartosPage = document.getElementById("quartos");
-}
+}*/ // if execution of script is not deferred
+
+quartosPage = document.getElementById("quartos"); //execution of script is deferred
 
 var quartosOriginalImage = ["imagens/apartamento.jpg", "imagens/quarto.jpg"];
 var quartosFixedImage = ["imagens/apartamento.jpg", "imagens/quarto.jpg"]; //using variable instead of repeating will copy by reference

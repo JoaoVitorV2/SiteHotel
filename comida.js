@@ -5,7 +5,7 @@ var comidaTextos = [
 	"TEXTO JANTA"
 ];
 
-document.addEventListener('DOMContentLoaded', comidaInitialize);
+
 
 class ImageSwitcher {
 	constructor(id, images) {
@@ -29,6 +29,14 @@ class ImageSwitcher {
 	}
 }
 
+comidaImage = document.getElementById('comidaImage'); //execution of script is deferred
+comidaText = document.getElementById('comidaText');
+var comidaSections = new Array(3);
+//comidaSections[0] temporarily disabled (only one picture)
+comidaSections[1] = new ImageSwitcher("comida", ["imagens/cafe.jpg", "imagens/cafe2.jpg"]);
+comidaSections[2] = new ImageSwitcher("comida", ["imagens/janta.jpg", "imagens/janta2.jpg"]);
+
+/*document.addEventListener('DOMContentLoaded', comidaInitialize);
 var comidaSections = new Array(3);
 var comidaImage;
 var comidaText;
@@ -38,7 +46,7 @@ function comidaInitialize() {
 	comidaSections[2] = new ImageSwitcher("comida", ["imagens/janta.jpg", "imagens/janta2.jpg"]);
 	comidaImage = document.getElementById('comidaImage');
 	comidaText = document.getElementById('comidaText');
-}
+}*/ //if execution of script is not deferred
 
 let comidaQueued = -1;
 let comidaCurrent = 0;

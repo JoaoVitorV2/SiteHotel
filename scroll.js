@@ -1,8 +1,12 @@
-document.addEventListener('DOMContentLoaded', scrollInitialize);
+//document.addEventListener('DOMContentLoaded', scrollInitialize); //if execution of script is ont deferred
 window.addEventListener('scroll', scrollDecideShowScrollToTop);
 window.addEventListener('scroll', scrollDecideShowPagesIndicator);
 
-var scrollToTopButton;
+scrollToTopButton = document.getElementById('scrollToTopButton'); //execution of script is deferred
+scrollPagesIndicator = document.getElementById('currentPageIndicator');
+scrollPages = document.getElementsByClassName('page');
+
+/*var scrollToTopButton;
 var scrollPagesIndicator;
 var scrollPages;
 
@@ -10,7 +14,7 @@ function scrollInitialize() {
 	scrollToTopButton = document.getElementById('scrollToTopButton');
 	scrollPagesIndicator = document.getElementById('currentPageIndicator');
 	scrollPages = document.getElementsByClassName('page');
-}
+}*/ //if execution of script is not deferred
 
 function scrollDecideShowScrollToTop() {
 	if (document.getElementById('navbar').getBoundingClientRect().bottom < 0) {
