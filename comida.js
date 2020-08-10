@@ -1,4 +1,11 @@
-document.addEventListener('DOMContentLoaded', initialize);
+var comidaFotos = ['imagens/restaurante.jpg', 'imagens/cafe.jpg', 'imagens/janta.jpg'];
+var comidaTextos = [
+	"TEXTO RESTAURANTE",
+	"TEXTO CAFE",
+	"TEXTO JANTA"
+];
+
+document.addEventListener('DOMContentLoaded', comidaInitialize);
 
 class ImageSwitcher {
 	constructor(id, images) {
@@ -22,15 +29,19 @@ class ImageSwitcher {
 	}
 }
 
-let comidaSections = new Array(3);
+var comidaSections = new Array(3);
+var comidaImage;
+var comidaText;
 
-function initialize() {
+function comidaInitialize() {
 	comidaSections[1] = new ImageSwitcher("comida", ["imagens/cafe.jpg", "imagens/cafe2.jpg"]);
 	comidaSections[2] = new ImageSwitcher("comida", ["imagens/janta.jpg", "imagens/janta2.jpg"]);
+	comidaImage = document.getElementById('comidaImage');
+	comidaText = document.getElementById('comidaText');
 }
 
-var comidaQueued = -1;
-var comidaCurrent = 0;
+let comidaQueued = -1;
+let comidaCurrent = 0;
 async function comidaCategorySwitch(selected) {
 	if (comidaImage.style.getPropertyValue('animation') != 0) {
 		comidaQueued = selected;
@@ -41,8 +52,8 @@ async function comidaCategorySwitch(selected) {
 		comidaText.style.setProperty('animation', 'fade 1s 1');
 			comidaCurrent = selected;
 		setTimeout(function () {
-			comidaImage.src = restauranteFotos[selected];
-		comidaText.innerHTML = restauranteTextos[selected];
+			comidaImage.src = comidaFotos[selected];
+		comidaText.innerHTML = comidaTextos[selected];
 		}, 500);
 			document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "none");
 		document.getElementsByClassName("comidaImageButton")[1].style.setProperty("display", "none");
