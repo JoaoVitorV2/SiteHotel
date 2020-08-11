@@ -5,8 +5,6 @@ var comidaTextos = [
 	"TEXTO JANTA"
 ];
 
-
-
 class ImageSwitcher {
 	constructor(id, images) {
 		this.element = document.getElementById(id);
@@ -48,6 +46,14 @@ function comidaInitialize() {
 	comidaText = document.getElementById('comidaText');
 }*/ //if execution of script is not deferred
 
+function comidaImageSwitch(direction) {
+	if (comidaCurrent == 0) {
+		console.error("Multiple images disabled for current item.");
+	} else {
+		comidaSections[comidaCurrent].change(direction);
+	}
+}
+
 let comidaQueued = -1;
 let comidaCurrent = 0;
 async function comidaCategorySwitch(selected) {
@@ -83,12 +89,4 @@ async function comidaCategorySwitch(selected) {
 			comidaCategorySwitch(queuedTemp);
 		}
 	}, 1050);
-}
-
-function comidaImageSwitch(direction) {
-	if (comidaCurrent == 0) {
-		console.error("Multiple images disabled for current item.");
-	} else {
-		comidaSections[comidaCurrent].change(direction);
-	}
 }

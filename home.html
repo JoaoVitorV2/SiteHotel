@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!--adicionar meta tags-->
-	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="stylesheet" type="text/css" href="styles_bk.css" />
 	<link rel="stylesheet" type="text/css" href="animations.css" />
 	<script defer src="quartos.js"></script>
 	<script defer src="scroll.js"></script>
@@ -12,8 +12,8 @@
 		<div class="verticalContainer" id="mainContainer">
 			<img src="imagens/logo.jpg" id="logo">
 			<div class="buttonContainer" id="navbar">
-				<div onclick="javascript: document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'center'});"><span>CONHEÇA</span></div>
-				<div onclick="javascript: document.getElementsByClassName('page')[document.getElementsByClassName('page').length-1].scrollIntoView({ behavior: 'smooth', block: 'center' });"><span>CONTATO</span></div>
+				<div class="buttonContainer-div navbar-div" onclick="javascript: document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'center'});"><span>CONHEÇA</span></div>
+				<div class="buttonContainer-div navbar-div" onclick="javascript: document.getElementsByClassName('page')[document.getElementsByClassName('page').length-1].scrollIntoView({ behavior: 'smooth', block: 'center' });"><span>CONTATO</span></div>
 			</div>
 			<div class="page verticalContainer textContainer" style="padding:0;font-size:xx-large;">
 				<p>Para quem procura um ambiente aconchegante e ótima qualidade de atendimento sem abrir mão da economia, o Hotel Alvi é o lugar ideal para se hospedar.</p>
@@ -30,33 +30,29 @@
 					VOLTAR
 				</div>
 				<div id="quartos">
-					<div>
-						<div>
-							<div><h2>APARTAMENTO</h2></div>
-							<div>
-								<ul>
-									<li onmouseover="quartosImageSwitch(0, 'imagens/apartamento_cama.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento_cama.jpg');">Cama de casal</li>
-									<li>Banheiro</li>
-									<li onmouseover="quartosImageSwitch(0, 'imagens/apartamento.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento.jpg');">TV</li>
-									<li onmouseover="quartosImageSwitch(0, 'imagens/apartamento.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento.jpg');">Frigobar</li>
-									<li onmouseover="quartosImageSwitch(0, 'imagens/apartamento.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento.jpg');">Climatizador de ar</li>
-									<li onmouseover="quartosImageSwitch(0, 'imagens/cafe.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/cafe.jpg');">Café da manhã incluso</li>
-								</ul>
-							</div>
+					<div class="quartos-div quartos-div__firstChild">
+						<div class="quartosText">
+							<h2 class="quartosText-h2">APARTAMENTO</h2>
+							<ul class="quartosText-ul">
+								<li class="quartosText-ul-li" onmouseover="quartosImageSwitch(0, 'imagens/apartamento_cama.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento_cama.jpg');">Cama de casal</li>
+								<li class="quartosText-ul-li">Banheiro</li>
+								<li class="quartosText-ul-li" onmouseover="quartosImageSwitch(0, 'imagens/apartamento.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento.jpg');">TV</li>
+								<li class="quartosText-ul-li" onmouseover="quartosImageSwitch(0, 'imagens/apartamento.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento.jpg');">Frigobar</li>
+								<li class="quartosText-ul-li" onmouseover="quartosImageSwitch(0, 'imagens/apartamento.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/apartamento.jpg');">Climatizador de ar</li>
+								<li class="quartosText-ul-li" onmouseover="quartosImageSwitch(0, 'imagens/cafe.jpg');" onmouseout="quartosImageSwitch(0);" onclick="quartosImageFix(0, 'imagens/cafe.jpg');">Café da manhã incluso</li>
+							</ul>
 						</div>
-						<img src="imagens/apartamento.jpg" onclick="javascript: quartosExpand(0);" />
+						<img class="quartosImg" src="imagens/apartamento.jpg" onclick="javascript: quartosExpand(0);" />
 					</div>
-					<div>
-						<div>
-							<div><h2>QUARTO<br />STANDARD</h2></div>
-							<div>
-								<ul>
-									<li onmouseover="quartosImageSwitch(1, 'imagens/quarto_tv.jpg');" onmouseout="quartosImageSwitch(1);" onclick="quartosImageFix(1, 'imagens/quarto_tv.jpg');">TV</li>
-									<li onmouseover="quartosImageSwitch(1, 'imagens/cafe.jpg');" onmouseout="quartosImageSwitch(1);" onclick="quartosImageFix(1, 'imagens/cafe.jpg');">Café da manhã incluso</li>
-								</ul>
-							</div>
+					<div class="quartos-div quartos-div__lastChild">
+						<div class="quartosText">
+							<h2 class="quartosText-h2">QUARTO<br />STANDARD</h2>
+							<ul class="quartosText-ul">
+								<li class="quartosText-ul-li" onmouseover="quartosImageSwitch(1, 'imagens/quarto_tv.jpg');" onmouseout="quartosImageSwitch(1);" onclick="quartosImageFix(1, 'imagens/quarto_tv.jpg');">TV</li>
+								<li class="quartosText-ul-li" onmouseover="quartosImageSwitch(1, 'imagens/cafe.jpg');" onmouseout="quartosImageSwitch(1);" onclick="quartosImageFix(1, 'imagens/cafe.jpg');">Café da manhã incluso</li>
+							</ul>
 						</div>
-						<img src="imagens/quarto.jpg" onclick="javascript: quartosExpand(1);" />
+						<img class="quartosImg" src="imagens/quarto.jpg" onclick="javascript: quartosExpand(1);" />
 					</div>
 				</div>
 			</div>
@@ -67,13 +63,12 @@
 				<img src="imagens/sala.jpg" style="height:100%;border-left:solid thin;"/>
 			</div>
 			<div class="page" id="comida">
-				<div class="buttonList" style="height:100%;border-right-width:thick;">
-					<div onclick="comidaCategorySwitch(0);"><div>RESTAURANTE</div></div>
-					<div onclick="comidaCategorySwitch(1);"><div>CAFÉ DA MANHÃ</div></div>
-					<div onclick="comidaCategorySwitch(2);"><div>JANTA</div></div>
-
+				<div class="comida-div comida-div__firstChild buttonList" style="height:100%;border-right-width:thick;">
+					<div class="buttonList-div buttonList-div__firstChild" onclick="comidaCategorySwitch(0);"><div>RESTAURANTE</div></div>
+					<div class="buttonList-div" onclick="comidaCategorySwitch(1);"><div>CAFÉ DA MANHÃ</div></div>
+					<div class="buttonList-div buttonList-div__lastChild" onclick="comidaCategorySwitch(2);"><div>JANTA</div></div>
 				</div>
-				<div style="position:relative;display:flex;justify-content:center;width:100vh;flex-shrink:0;"> <!--Width is 80vh(height)*1,25(aspect ratio).-->
+				<div class="comida-div" style="position:relative;display:flex;justify-content:center;width:100vh;flex-shrink:0;"> <!--Width is 80vh(height)*1,25(aspect ratio).-->
 					<img src="imagens/restaurante.jpg" id="comidaImage" style="height:100%;width:100%;" />
 					<div class="selectImageButton selectImageButton__next comidaImageButton" onclick="comidaImageSwitch(1);">
 						<svg width="100%" height="100%" viewBox="0 0 100 100">
@@ -86,7 +81,7 @@
 						</svg>
 					</div>
 				</div>
-				<div id="comidaText" class="verticalContainer textContainer" style="height:100%;">
+				<div class="comida-div comida-div__lastChild verticalContainer textContainer" id="comidaText" style="height:100%;">
 					TEXTO
 				</div>
 			</div>
@@ -96,21 +91,21 @@
 				</div>
 				<iframe style="height:100%;width:100%;" id="gmap_canvas" src='https://maps.google.com/maps?q=Alvi%20Hotel&t=&z=16&ie=UTF8&iwloc=&output=embed' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 			</div>-->
-			<div class="page" style="font-size:xx-large;">
-				<div style="margin-top:auto;margin-bottom:auto;width:100%;text-align:center;">
+			<div class="page">
+				<div class="verticalContainer textContainer" style="align-self:center;width:100%;height:min-content;font-size:xx-large;">
 					Faça sua reserva pelo telefone<br /><a href="tel:+555432751263" style="text-decoration:none;color:initial;">(54)3275-1263</a><br />ou pelo e-mail<br /><a href="mailto:atendimento@hotelalvi.com.br">atendimento@hotelalvi.com.br</a>
 				</div>
 			</div>
 		</div>
 		<div id="currentPageIndicator">
-			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[0].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>INÍCIO</div></div>
-			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>QUARTOS</div></div>
-			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[2].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>SALA</div></div>
-			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[3].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>RESTAURANTE</div></div>
-			<div class="buttonContainer" onclick="javascript: document.getElementsByClassName('page')[4].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div>CONTATO</div></div>
+			<div class="buttonContainer currentPageIndicator-div" onclick="document.getElementsByClassName('page')[0].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div currentPageIndicator-div__firstChild-div">INÍCIO</div></div>
+			<div class="buttonContainer currentPageIndicator-div" onclick="document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div">QUARTOS</div></div>
+			<div class="buttonContainer currentPageIndicator-div" onclick="document.getElementsByClassName('page')[2].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div">SALA</div></div>
+			<div class="buttonContainer currentPageIndicator-div" onclick="document.getElementsByClassName('page')[3].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div">RESTAURANTE</div></div>
+			<div class="buttonContainer currentPageIndicator-div" onclick="document.getElementsByClassName('page')[4].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div">CONTATO</div></div>
 		</div>
 		<div class="buttonContainer" id="scrollToTopButton" onclick="javascript: window.scrollTo({top:0, behavior: 'smooth'});">
-			<div style="width:90%;">
+			<div class="buttonContainer-div" style="width:90%;">
 				Voltar para o topo.
 			</div>
 		</div>
