@@ -112,10 +112,6 @@
 	transform: scaleX(-1);
 }
 
-.comidaImageButton {
-	display: none;
-}
-
 #mainContainer {
 	margin-left:12.5%;
 	width: 75%;
@@ -200,6 +196,9 @@
 	border-right: none;
 	flex-grow:5;
 }
+.comidaImageButton {
+	display: none;
+}
 
 #currentPageIndicator{
 	width:10vw;
@@ -236,6 +235,12 @@
 
 body{
 	margin:0;
+}
+
+h3{
+	font-weight:500;
+	font-size:1.4em;
+	margin:0.5em 0;
 }
 
 footer {
