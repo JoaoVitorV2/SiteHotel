@@ -69,7 +69,7 @@ async function comidaCategorySwitch(selected) {
 			comidaImage.src = comidaFotos[selected];
 		comidaText.innerHTML = comidaTextos[selected];
 		}, 500);
-			document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "none");
+		document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "none");
 		document.getElementsByClassName("comidaImageButton")[1].style.setProperty("display", "none");
 		if (selected != 0) { //selected=0 has only one image
 			setTimeout(function () {

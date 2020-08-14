@@ -38,11 +38,10 @@ function quartosExpand(side) {
 			currentDiv.style.setProperty("width", "100%");
 			currentDiv.style.setProperty("flex-direction", "row");
 			currentDiv.style.setProperty("border-style", "none");
-			currentDiv.children[1].style.setProperty("width", "init");
-			currentDiv.children[1].style.setProperty("max-height", "100%");
+			currentDiv.children[1].style.setProperty("width", "initial");
+			currentDiv.children[1].style.setProperty("height", "100%");
 			currentDiv.children[1].style.setProperty("border-left-style", "solid");
 			currentDiv.children[1].style.setProperty("cursor", "initial");
-			//currentDiv.children[0].children[1].children[0].style.setProperty("columns", "1"); //list wrapper
 			currentDiv.children[0].children[1].style.setProperty("columns", "1");
 		} else {
 			currentDiv.style.setProperty("display", "none");
@@ -59,10 +58,9 @@ function quartosRestore() {
 		currentDiv.style.setProperty("border-left-style", "solid");
 		currentDiv.style.setProperty("border-right-style", "solid");
 		currentDiv.children[1].style.setProperty("width", "100%");
-		currentDiv.children[1].style.setProperty("max-height", "init");
+		currentDiv.children[1].style.setProperty("height", "initial");
 		currentDiv.children[1].style.setProperty("border-left-style", "none");
 		currentDiv.children[1].style.setProperty("cursor", "pointer");
-		//currentDiv.children[0].children[1].children[0].style.setProperty("columns", "2"); // wrapper
 		currentDiv.children[0].children[1].style.setProperty("columns", "2");
 	}
 	quartosImageReset();
