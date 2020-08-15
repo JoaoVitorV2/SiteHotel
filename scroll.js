@@ -1,51 +1,53 @@
-//document.addEventListener('DOMContentLoaded', scrollInitialize); //if execution of script is ont deferred
-window.addEventListener('scroll', scrollDecideShowScrollToTop);
-window.addEventListener('scroll', scrollDecideShowPagesIndicator);
+var scrollToTopButton = (function () {
+	var element = document.getElementById('scrollToTopButton');
+	var navbar = document.getElementById('navbar');
 
-scrollToTopButton = document.getElementById('scrollToTopButton'); //execution of script is deferred
-scrollPagesIndicator = document.getElementById('currentPageIndicator');
-scrollPages = document.getElementsByClassName('page');
-
-/*var scrollToTopButton;
-var scrollPagesIndicator;
-var scrollPages;
-
-function scrollInitialize() {
-	scrollToTopButton = document.getElementById('scrollToTopButton');
-	scrollPagesIndicator = document.getElementById('currentPageIndicator');
-	scrollPages = document.getElementsByClassName('page');
-}*/ //if execution of script is not deferred
-
-function scrollDecideShowScrollToTop() {
-	if (document.getElementById('navbar').getBoundingClientRect().bottom < 0) {
-		scrollToTopButton.style.setProperty('display', 'flex');
-	} else {
-		scrollToTopButton.style.setProperty('display', 'none');
-	}
-}
-function scrollDecideShowPagesIndicator() {
-	if (scrollPages[0].getBoundingClientRect().bottom < window.innerHeight) {
-		scrollCheckCurrentPage();
-		scrollPagesIndicator.style.setProperty('display', 'flex');
-	} else {
-		scrollPagesIndicator.style.setProperty('display', 'none');
-	}
-}
-
-var SCROLL_TOLERANCE = window.innerHeight * 0.25;
-function scrollCheckCurrentPage() {
-	for (var i = 0; i < scrollPages.length; i++) {
-		if (scrollPages[i].getBoundingClientRect().top+SCROLL_TOLERANCE > 0 && scrollPages[i].getBoundingClientRect().bottom-SCROLL_TOLERANCE < window.innerHeight) {
-			scrollSetCurrentPage(i);
-			break;
+	var decideShow = function () {
+		if (navbar.getBoundingClientRect().bottom < 0) {
+			element.style.setProperty('display', 'flex');
+		} else {
+			element.style.setProperty('display', 'none');
 		}
 	}
-}
-var scrollCurrentPage = 0;
-function scrollSetCurrentPage(page) {
-	if (page != scrollCurrentPage) {
-		scrollPagesIndicator.children[scrollCurrentPage].children[0].style.setProperty('border-color', '#FFFFFF');
-		scrollPagesIndicator.children[page].children[0].style.setProperty('border-color', '#C0C0C0');
-		scrollCurrentPage = page;
+	return {
+		decideShow: decideShow
 	}
-}
+})();
+
+var scrollPagesIndicator = (function () {
+	var element = document.getElementById('currentPageIndicator');
+	var pages = document.getElementsByClassName('page');
+	var tolerance = window.innerHeight * 0.25;
+	var currentPage = 0;
+
+	var decideShow = function () {
+		if (pages[0].getBoundingClientRect().bottom < window.innerHeight) {
+			checkCurrentPage();
+			element.style.setProperty('display', 'flex');
+		} else {
+			element.style.setProperty('display', 'none');
+		}
+	}
+	var checkCurrentPage = function () {
+		for (var i = 0; i < pages.length; i++) {
+			if (pages[i].getBoundingClientRect().top + tolerance > 0 && pages[i].getBoundingClientRect().bottom - tolerance < window.innerHeight) {
+				setPage(i);
+				break;
+			}
+		}
+	}
+	var setPage = function (page) {
+		if (page != currentPage) {
+			element.children[currentPage].children[0].style.setProperty('border-color', '#FFFFFF');
+			element.children[page].children[0].style.setProperty('border-color', '#C0C0C0');
+			currentPage = page;
+		}
+	}
+
+	return {
+		decideShow: decideShow
+	}
+})();
+
+window.addEventListener('scroll', scrollToTopButton.decideShow);
+window.addEventListener('scroll', scrollPagesIndicator.decideShow);
