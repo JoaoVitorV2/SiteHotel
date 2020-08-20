@@ -3,7 +3,7 @@ var scrollToTopButton = (function () {
 	var navbar = document.getElementById('navbar');
 
 	var decideShow = function () {
-		if (navbar.getBoundingClientRect().bottom < 0) {
+		if (navbar.getBoundingClientRect().bottom < 0 && window.innerWidth>810) {
 			element.style.setProperty('display', 'flex');
 		} else {
 			element.style.setProperty('display', 'none');
@@ -15,17 +15,20 @@ var scrollToTopButton = (function () {
 })();
 
 var scrollPagesIndicator = (function () {
-	var element = document.getElementById('currentPageIndicator');
+	var container = document.getElementById('currentPageIndicator');
+	var element = document.getElementById('currentPageIndicatorBody');
+	var arrow = document.getElementById('currentPageIndicatorShow');
 	var pages = document.getElementsByClassName('page');
 	var tolerance = window.innerHeight * 0.25;
 	var currentPage = 0;
+	var manualHidden = true;//independent from scroll, dependent from user interaction on small screens
 
 	var decideShow = function () {
 		if (pages[0].getBoundingClientRect().bottom < window.innerHeight) {
 			checkCurrentPage();
-			element.style.setProperty('display', 'flex');
+			container.style.setProperty('display', 'flex');
 		} else {
-			element.style.setProperty('display', 'none');
+			container.style.setProperty('display', 'none');
 		}
 	}
 	var checkCurrentPage = function () {
@@ -44,10 +47,27 @@ var scrollPagesIndicator = (function () {
 		}
 	}
 
+	var slide = function () {
+		if (manualHidden) {
+			container.style.width = "min-content";
+			element.style.flex="1";
+			arrow.style.transform="scaleX(-1)";
+		} else {
+			element.style.flex = "0";
+			arrow.style.transform = "scaleX(1)";
+			setTimeout(function () {
+				container.style.width = "1em";
+			}, 1000);
+		}
+		manualHidden = !manualHidden;
+	}
+
 	return {
-		decideShow: decideShow
+		decideShow: decideShow,
+		slide: slide
 	}
 })();
 
 window.addEventListener('scroll', scrollToTopButton.decideShow);
 window.addEventListener('scroll', scrollPagesIndicator.decideShow);
+window.addEventListener('resize', scrollToTopButton.decideShow);

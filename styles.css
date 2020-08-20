@@ -24,6 +24,14 @@
 	border-radius:12px;
 	overflow:hidden;
 }
+@media (max-width:810px){
+	.page{
+		border-style:solid none;
+		border-width:medium;
+		border-radius:0;
+		height:max-content;
+	}
+}
 
 .buttonList{
 	margin:0;
@@ -77,6 +85,10 @@
 	border-color: #C0C0C0;
 }
 
+.faded {
+	box-shadow: #FFFFFF 35px 35px 60px inset, #FFFFFF -35px -35px 60px inset;
+}
+
 .backButton {
 	display: none; /*flex*/
 	position: absolute;
@@ -95,7 +107,6 @@
 	height:25%;
 	position:absolute;
 	top:37.5%;
-	z-index:1;
 	background-color:#303030;
 	opacity:0.35;
 	cursor:pointer;
@@ -120,8 +131,14 @@
 
 #mainContainer {
 	margin-left:12.5%;
-	width: 75%;
+	width:75%;
 	min-height:100vh;
+}
+@media (max-width:810px){
+	#mainContainer {
+		min-width:100%;
+		margin:0;
+	}
 }
 
 #logo {
@@ -138,11 +155,33 @@
 	font-size:larger;
 }
 #navbar > div {
-	margin-left:3px;
-	margin-right:3px;
-	margin-top:1px;
-	margin-bottom:1px;
+	margin: 1px 3px;
 	width:50%;
+}
+@media (max-width:810px){
+	#navbar{
+		box-sizing:border-box;
+		border-radius:0;
+		padding:2px;
+	}
+	#navbar>div{
+		margin: 1px 2px;
+	}
+}
+
+#textoInicial {
+	padding: 0;
+	font-size: xx-large;
+	background-image: url('imagens/vista1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position-y: center;
+}
+@media (max-width:810px){
+	#textoInicial{
+		font-size:3vw;
+	}
 }
 
 #quartos{
@@ -194,6 +233,38 @@
 		width: 100%;
 		cursor: pointer;
 	}
+@media (max-width:810px){
+	#quartosSlideButtonRight {
+		display: flex;
+	}
+	#quartos{
+		overflow:hidden;
+	}
+	#quartos > div{
+		width:100%;
+		flex-shrink:0;
+	}
+	#quartos > div > div:first-child > ul{
+		padding-left:2px;
+		font-size:4vw;
+	}
+	#quartos > div:first-child > div:first-child > h2{
+		align-self:flex-start;
+		margin-left:0;
+	}
+	#quartos > div:last-child > div:first-child > h2{
+		align-self:flex-end;
+		margin-right:0;
+	}
+	#quartos > div:last-child > div:first-child > h2:hover{
+		text-decoration-line:underline;
+		cursor:pointer;
+	}
+	#quartos > div > img{
+		cursor:default;
+	}
+}
+
 
 #comida > div {
 	border-right: solid;
@@ -210,27 +281,67 @@
 .comidaImageButton {
 	display: none;
 }
+#comidaImage{
+	z-index:-1;
+}
 
 #currentPageIndicator{
-	width:10vw;
-	min-height:14em;
-	max-height:60vh;
+	width:min-content;
+	height:14em;
 	position:fixed;
 	left:20px;
 	bottom:50vh;
 	display:none; /*flex*/
-	flex-direction:column;
-	justify-content:space-evenly;
-	align-items:flex-start;
+	align-items:center;
 }
-#currentPageIndicator > div{
+#currentPageIndicatorBody {
+	width:min-content;
+	height:100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	overflow:hidden;
+}
+#currentPageIndicatorBody > div{
 	border-radius:10px;	
 }
-#currentPageIndicator > div > div:hover{
+#currentPageIndicatorBody > div > div:hover{
 	border-color:#FFFFFF;
 }
-#currentPageIndicator > div:first-child > div{
+#currentPageIndicatorBody > div:first-child > div{
 	border-color:#C0C0C0;
+}
+#currentPageIndicatorShow {
+	display: none; /*flex*/
+	height: 30%;
+	width:1em;
+	flex-shrink:0;
+	box-shadow: #303030 2px 2px 5px;
+	background-color:#FFFFFF;
+	opacity:0.5;
+	cursor:pointer;
+}
+@media (max-width: 810px) {
+	#currentPageIndicator {
+		left:-1px;
+		width:1em;
+	}
+	#currentPageIndicatorBody {
+		border: solid 1px;
+		border-left:none;
+		border-top-right-radius: 6px;
+		border-bottom-right-radius: 6px;
+		background-color:#FFFFFF;
+		flex:0;
+		transition: flex 1s;
+	}
+	#currentPageIndicatorBody>div{
+		margin:0 4px;
+	}
+	#currentPageIndicatorShow {
+		display: flex;
+	}
 }
 
 #scrollToTopButton {
@@ -273,6 +384,7 @@ footer {
 	margin-top:20px;
 
 	display:flex;
-	justify-content:space-evenly;
+	justify-content:space-around;
 	align-items:stretch;
+	overflow:hidden;
 }

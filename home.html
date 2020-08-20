@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="initial-scale=1.0">
 	<meta name="description" content="Localizado em local calmo no centro de Nova Araçá, possui garagem semi-aberta, recepção com lareira e quartos com banheiro, climatizador e frigobar." />
 	<meta name="keywords" content="hotel, hoteis, hotéis, nova araçá, nova araca, hotel nova bassano, hotel paraí, hotel parai, hotel barato, cafe, café, café da manhã, cafe da manha" />
 
@@ -18,10 +18,10 @@
 		<div class="verticalContainer" id="mainContainer">
 			<img src="imagens/logo.jpg" id="logo">
 			<div class="buttonContainer" id="navbar">
-				<div onclick="javascript: document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'center'});"><span>CONHEÇA</span></div>
-				<div onclick="javascript: document.getElementsByClassName('page')[document.getElementsByClassName('page').length-1].scrollIntoView({ behavior: 'smooth', block: 'center' });"><span>CONTATO</span></div>
+				<div onclick="javascript: document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'start' });"><span>CONHEÇA</span></div>
+				<div onclick="javascript: document.getElementsByClassName('page')[document.getElementsByClassName('page').length-1].scrollIntoView({ behavior: 'smooth', block: 'start' });"><span>CONTATO</span></div>
 			</div>
-			<div class="page verticalContainer textContainer" style="padding:0;font-size:xx-large;">
+			<div id="textoInicial" class="page verticalContainer textContainer faded">
 				<p>Para quem procura um ambiente aconchegante e ótima qualidade de atendimento sem abrir mão da economia, o Hotel Alvi é o lugar ideal para se hospedar.</p>
 				<p>Dispõe de acomodações com TV e Wi-Fi para os hóspedes, além de café da manhã e restaurante.</p>
 				<p>O Hotel Alvi está no ramo há mais de 20 anos, localizado em local calmo no centro de Nova Araçá, possui garagem semi-aberta e recepção com lareira.</p>
@@ -31,9 +31,23 @@
 				<div class="backButton" onclick="quartos.restore();">
 					<svg viewBox="0 0 100 100" height="1em" width="1em">
 						<circle cx="50" cy="50" r="45" stroke="#000000" stroke-width="10" fill="#FFFFFF" />
-						<polygon points="20,50 50,30 50,45, 80,45 80,55 50,55 50,70" fill="#000000" stroke-width="0" />
+						<polygon points="20,50 50,30 50,45 80,45 80,55 50,55 50,70" fill="#000000" stroke-width="0" />
 					</svg>
 					VOLTAR
+				</div>
+				<div class="backButton" id="quartosSlideButtonLeft" onclick="quartos.slide(0);">
+					<svg viewBox="0 0 100 100" height="1em" width="1em">
+						<circle cx="50" cy="50" r="45" stroke="#000000" stroke-width="10" fill="#FFFFFF" />
+						<polygon points="20,50 50,30 50,45 80,45 80,55 50,55 50,70" fill="#000000" stroke-width="0" />
+					</svg>
+					APARTAMENTO
+				</div>
+				<div class="backButton" id="quartosSlideButtonRight" style="right:4px;" onclick="quartos.slide(1);">
+					STANDARD
+					<svg viewBox="0 0 100 100" height="1em" width="1em">
+						<circle cx="50" cy="50" r="45" stroke="#000000" stroke-width="10" fill="#FFFFFF" />
+						<polygon points="80,50 50,30 50,45 20,45 20,55 50,55 50,70" fill="#000000" stroke-width="0" />
+					</svg>
 				</div>
 				<div id="quartos">
 					<div>
@@ -52,7 +66,7 @@
 					</div>
 					<div>
 						<div>
-							<h2>QUARTO<br />STANDARD</h2>
+							<h2 onclick="quartos.imageFix(1, 'imagens/quarto.jpg');">QUARTO<br />STANDARD</h2>
 							<ul>
 								<li onmouseover="quartos.imageSwitch(1, 'imagens/quarto_tv.jpg');" onmouseout="quartos.imageSwitch(1);" onclick="quartos.imageFix(1, 'imagens/quarto_tv.jpg');">Televisão</li>
 								<li onmouseover="quartos.imageSwitch(1, 'imagens/cafe.jpg');" onmouseout="quartos.imageSwitch(1);" onclick="quartos.imageFix(1, 'imagens/cafe.jpg');">Café da manhã incluso</li>
@@ -66,15 +80,15 @@
 				<div class="verticalContainer textContainer" style="flex-grow:1;align-self:center;padding:3px;">
 					<p>Donec diam leo, fermentum id neque non, lacinia porttitor mi.</p><p>Phasellus ac arcu fermentum, laoreet justo ac, pellentesque elit.</p><p>Vestibulum fermentum arcu non sodales dapibus.</p>
 				</div>
-				<img src="imagens/sala.jpg" style="height:100%;border-left:solid thin;"/>
+				<img src="imagens/sala.jpg" style="height:100%;border-left:solid thin;" />
 			</div>
 			<div class="page" id="comida">
-				<div class="buttonList" style="height:100%;border-right-width:thick;">
+				<div class="buttonList" style="align-self:stretch;border-right-width:thick;width:max-content;">
 					<div onclick="comida.categorySwitch(0);"><div>RESTAURANTE</div></div>
 					<div onclick="comida.categorySwitch(1);"><div>CAFÉ DA MANHÃ</div></div>
 					<div onclick="comida.categorySwitch(2);"><div>JANTA</div></div>
 				</div>
-				<div style="position:relative;display:flex;justify-content:center;width:100vh;flex-shrink:0;"> <!--Width is 80vh(height)*1,25(aspect ratio).-->
+				<div style="position:relative;display:flex;justify-content:center;width:100vh;flex-shrink:0;"><!--Width is 80vh(height)*1,25(aspect ratio).-->
 					<img src="imagens/restaurante.jpg" id="comidaImage" style="height:100%;width:100%;" />
 					<div class="selectImageButton selectImageButton__next comidaImageButton" onclick="comida.imageSwitch(1);">
 						<svg width="100%" height="100%" viewBox="0 0 100 100">
@@ -87,7 +101,7 @@
 						</svg>
 					</div>
 				</div>
-				<div class="verticalContainer textContainer" id="comidaText" style="height:100%;">
+				<div class="verticalContainer textContainer" id="comidaText" style="align-self:stretch;">
 					TEXTO RESTAURANTE
 				</div>
 			</div>
@@ -101,11 +115,19 @@
 			</div>
 		</div>
 		<div id="currentPageIndicator">
-			<div class="buttonContainer" onclick="document.getElementsByClassName('page')[0].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div currentPageIndicator-div__firstChild-div">INÍCIO</div></div>
-			<div class="buttonContainer" onclick="document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div">QUARTOS</div></div>
-			<div class="buttonContainer" onclick="document.getElementsByClassName('page')[2].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div">SALA</div></div>
-			<div class="buttonContainer" onclick="document.getElementsByClassName('page')[3].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div">RESTAURANTE</div></div>
-			<div class="buttonContainer" onclick="document.getElementsByClassName('page')[4].scrollIntoView({ behavior: 'smooth', block: 'center'});"><div class="buttonContainer-div currentPageIndicator-div-div">CONTATO</div></div>
+			<div id="currentPageIndicatorBody">
+				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[0].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">INÍCIO</div></div>
+				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">QUARTOS</div></div>
+				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[2].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">SALA</div></div>
+				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[3].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">RESTAURANTE</div></div>
+				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[4].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">CONTATO</div></div>
+			</div>
+			<div id="currentPageIndicatorShow" onclick="scrollPagesIndicator.slide();">
+				<svg viewBox="0 0 100 100" width="100%" height="100%">
+					<line x1="10" y1="0" x2="90" y2="50" style="stroke:#000000;stroke-width:5;" stroke="#000000" stroke-width="5" />
+					<line x1="10" y1="100" x2="90" y2="50" stroke="#000000" stroke-width="5" />
+				</svg>
+			</div>
 		</div>
 		<div class="buttonContainer" id="scrollToTopButton" onclick="javascript: window.scrollTo({top:0, behavior: 'smooth'});">
 			<div style="width:90%;">
@@ -113,15 +135,14 @@
 			</div>
 		</div>
 		<footer>
-			<div>
-				<h4>SOBRE</h4>
-			</div>
-			<div style="display:flex;">
-				<iframe style="align-self:center;" id="gmap_canvas" src='https://maps.google.com/maps?q=Alvi%20Hotel&t=&z=16&ie=UTF8&iwloc=&output=embed' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-			</div>
-			<div style="margin-left:8px;">
-				<h4>ENDEREÇO</h4>
-				<a href="https://goo.gl/maps/tXc6NbnZjg8SaWdd9" style="text-decoration:none;color:black;align-self:end;">Avenida 12 de Abril, 34<br />Nova Araçá/RS</a>
+			<div style="display:flex;flex-wrap:wrap;">
+				<div style="display:flex;">
+					<iframe style="align-self:center;" id="gmap_canvas" src='https://maps.google.com/maps?q=Alvi%20Hotel&t=&z=16&ie=UTF8&iwloc=&output=embed' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+				</div>
+				<div style="margin-left:8px;">
+					<h4>ENDEREÇO</h4>
+					<a href="https://goo.gl/maps/tXc6NbnZjg8SaWdd9" style="text-decoration:none;color:black;align-self:end;">Avenida 12 de Abril, 34<br />Nova Araçá/RS</a>
+				</div>
 			</div>
 			<div class="iconWrapper">
 				<a href="https://www.facebook.com/hotelalvi/" target="_blank">
