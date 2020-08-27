@@ -24,7 +24,7 @@
 	border-radius:12px;
 	overflow:hidden;
 }
-@media (max-width:810px){
+@media (max-width:1300px){
 	.page{
 		border-style:solid none;
 		border-width:medium;
@@ -76,6 +76,7 @@
 	border-style:solid;
 	border-width:5px;
 	border-color:#FFFFFF;
+	width:100%;
 	background-color:#FFFFFF;
 	text-align:center;
 	cursor:pointer;
@@ -134,7 +135,7 @@
 	width:75%;
 	min-height:100vh;
 }
-@media (max-width:810px){
+@media (max-width:1300px){
 	#mainContainer {
 		min-width:100%;
 		margin:0;
@@ -158,7 +159,7 @@
 	margin: 1px 3px;
 	width:50%;
 }
-@media (max-width:810px){
+@media (max-width:1300px){
 	#navbar{
 		box-sizing:border-box;
 		border-radius:0;
@@ -178,7 +179,7 @@
 	background-attachment: fixed;
 	background-position-y: center;
 }
-@media (max-width:810px){
+@media (max-width:1300px){
 	#textoInicial{
 		font-size:3vw;
 	}
@@ -229,10 +230,17 @@
 	cursor:pointer;
 	text-decoration-line:underline;
 }
-#quartos > div > img {
+#quartos > div > div:last-child{
+	position:relative;
+}
+#quartos > div > div > img {
 		width: 100%;
+		z-index:-1;
 		cursor: pointer;
 	}
+.quartosImageButton{
+	display:none;
+}
 @media (max-width:810px){
 	#quartosSlideButtonRight {
 		display: flex;
@@ -241,7 +249,7 @@
 		overflow:hidden;
 	}
 	#quartos > div{
-		width:100%;
+		width:100vw;
 		flex-shrink:0;
 	}
 	#quartos > div > div:first-child > ul{
@@ -260,18 +268,34 @@
 		text-decoration-line:underline;
 		cursor:pointer;
 	}
-	#quartos > div > img{
+	#quartos > div > div > img{
 		cursor:default;
+	}
+	.quartosImageButton{
+		display:initial;
 	}
 }
 
+#sala > img {
+	height: 100%;
+	border-left: solid thin;
+}
+@media (max-width:810px) {
+	#sala {
+		flex-direction:column;
+	}
+	#sala > img {
+		width: 100vw;
+	}
+}
 
 #comida > div {
 	border-right: solid;
 }
-#comida > div:first-child{
-	min-width:15%;
-	flex-grow:1;
+#comidaButtonList {
+	width: max-content;
+	min-width: 15%;
+	flex-grow: 1;
 }
 #comida > div:last-child{
 	min-width:15%;
@@ -281,8 +305,74 @@
 .comidaImageButton {
 	display: none;
 }
+#comidaImageContainer {
+	position:relative;
+	display:flex;
+	justify-content:center;
+	height:80vh; 
+	width:100vh; /*Width is 80vh(height)*1,25(image aspect ratio).*/
+	flex-shrink:0;
+}
 #comidaImage{
 	z-index:-1;
+}
+.comidaCategoryArrow{
+	display:none;
+	cursor:pointer;
+}
+@media (max-aspect-ratio:3/2){
+	#comida > div:last-child{
+		display:none;
+	}
+}
+@media (max-aspect-ratio:10/8){
+	#comida{
+		flex-direction:column;
+	}
+	#comida > div:first-child{
+		width:100vw;
+		flex-direction:row;
+		overflow:hidden;
+		border-top:none;
+	}
+	#comidaButtonList > div{
+		width:100vw;
+		flex-shrink:0;
+		border:none;
+		padding:2px;
+		display:flex;
+		justify-content:space-evenly;
+		cursor:default;
+	}
+	.comidaCategoryArrow{
+		display:initial;
+	}
+	#comidaButtonList > div:hover {
+		animation-name: none;
+	}
+	#comida > div:last-child{
+		display:block;
+	}
+	#comida > div{
+		border-right:none;
+		border-top:solid;
+		width:100vw;
+		height:auto;
+	}
+	#comidaImageContainer {
+		width: 100vw !important;
+		height: 80vw !important; /*Width is 100vw(width)/1,25(image aspect ratio).*/
+	}
+}
+
+#contato {
+	width: 100%;
+	font-size: xx-large;
+}
+@media (max-width:810px){
+	#contato{
+		font-size:4vw;
+	}
 }
 
 #currentPageIndicator{
@@ -322,7 +412,7 @@
 	opacity:0.5;
 	cursor:pointer;
 }
-@media (max-width: 810px) {
+@media (max-width:1300px) {
 	#currentPageIndicator {
 		left:-1px;
 		width:1em;
