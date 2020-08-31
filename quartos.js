@@ -22,7 +22,7 @@ var quartos = (function () {
 	}
 	var imageFix = function (type, image) {
 		if (image == images[type].images.length) {
-			comida.categorySwitch(1);
+			comida.categorySwitch(0);
 			setTimeout(function () { document.getElementById("comida").scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
 			setTimeout(restore, 300);
 		} else {
