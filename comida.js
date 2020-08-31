@@ -3,9 +3,9 @@ var comida = (function () {
 	var text = document.getElementById("comidaText");
 	var buttonList = document.getElementById("comidaButtonList");
 	var categories = [
-		[new ImageSwitcher(image,["imagens/restaurante.jpg"]), "TEXTO RESTAURANTE"],
+		[new ImageSwitcher(image, ["imagens/restaurante.jpg"]), "O restaurante do Hotel Alvi oferece uma janta especial, exclusiva para hóspedes e reconhecida como uma das melhores da cidade."],
 		[new ImageSwitcher(image,["imagens/cafe.jpg", "imagens/cafe2.jpg"]), "TEXTO CAFE"],
-		[new ImageSwitcher(image,["imagens/janta.jpg", "imagens/janta2.jpg"]), "TEXTO JANTA"]
+		[new ImageSwitcher(image, ["imagens/janta.jpg", "imagens/janta2.jpg"]), "O restaurante do Hotel Alvi oferece uma janta especial, exclusiva para hóspedes e reconhecida como uma das melhores da cidade."]
 	];
 
 	var currentCategory = 0;

@@ -15,13 +15,13 @@ class ImageSwitcher {
 		}
 		this.fix(this.current);
 	}
-	set(image) {
-		this.current = image;
-		this.imageObject.src = this.images[this.current];
-	}
 	fix(image) {
 		this.fixed = image;
 		this.set(this.fixed);
+	}
+	set(image) {
+		this.current = image;
+		this.imageObject.src = this.images[this.current];
 	}
 	restore() {
 		this.current = this.fixed;

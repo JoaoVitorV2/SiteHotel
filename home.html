@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,14 +19,14 @@
 		<div class="verticalContainer" id="mainContainer">
 			<img src="imagens/logo.jpg" id="logo">
 			<div class="buttonContainer" id="navbar">
-				<div onclick="javascript: document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'start' });"><span>CONHEÇA</span></div>
-				<div onclick="javascript: document.getElementsByClassName('page')[document.getElementsByClassName('page').length-1].scrollIntoView({ behavior: 'smooth', block: 'start' });"><span>CONTATO</span></div>
+				<div onclick="document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'start' });"><span>CONHEÇA</span></div>
+				<div onclick="document.getElementsByClassName('page')[document.getElementsByClassName('page').length-1].scrollIntoView({ behavior: 'smooth', block: 'start' });"><span>CONTATO</span></div>
 			</div>
 			<div id="textoInicial" class="page verticalContainer textContainer faded">
-				<p>Para quem procura um ambiente aconchegante e ótima qualidade de atendimento sem abrir mão da economia, o Hotel Alvi é o lugar ideal para se hospedar.</p>
-				<p>Dispõe de acomodações com TV e Wi-Fi para os hóspedes, além de café da manhã e restaurante.</p>
-				<p>O Hotel Alvi está no ramo há mais de 20 anos, localizado em local calmo no centro de Nova Araçá, possui garagem semi-aberta e recepção com lareira.</p>
-				<p>Venha desfrutar de nossas instalações!</p>
+				<p>Com mais de 20 anos de história no ramo de hospedagem, o Hotel Alvi oferece um ambiente aconchegante e calmo no centro de Nova Araçá.</p>
+				<p>As acomodações contam com amplo espaço, além de TV e Wi-Fi liberadas para hóspedes. Como cortesia, também oferecemos café da manhã colonial incluso em nossos pernoites.</p>
+				<p>O Hotel Alvi dispõe de recepção com lareira, garagem semiaberta e outras instalações comuns de livre acesso a clientes, além de restaurante reconhecido na cidade.</p>
+				<p>Nos orgulhamos em oferecer instalações e atendimento diferenciados a nossos hóspedes, sem abrir mão da economia e de preços acessíveis.</p>
 			</div>
 			<div class="page" style="position:relative;">
 				<div class="backButton" onclick="quartos.restore();">
@@ -103,7 +103,8 @@
 			</div>
 			<div id="sala" class="page">
 				<div class="verticalContainer textContainer" style="flex-grow:1;align-self:center;padding:3px;">
-					<p>Donec diam leo, fermentum id neque non, lacinia porttitor mi.</p><p>Phasellus ac arcu fermentum, laoreet justo ac, pellentesque elit.</p><p>Vestibulum fermentum arcu non sodales dapibus.</p>
+					<p>Disponibilizamos um espaço amplo e confortável para confraternização e entretenimento no hall de entrada.</p>
+					<p>O hall de entrada do Hotel Alvi conta com lareira, sofás e TV, resultando em um ambiente propício para conversas, acompanhar futebol e, não poderia ser diferente, tomar um bom chimarrão.</p>
 				</div>
 				<img src="imagens/sala.jpg" />
 			</div>
@@ -169,14 +170,14 @@
 					</div>
 				</div>
 				<div class="verticalContainer textContainer" id="comidaText" style="align-self:stretch;">
-					TEXTO RESTAURANTE
+					O restaurante do Hotel Alvi oferece uma janta especial, exclusiva para hóspedes e reconhecida como uma das melhores da cidade.
 				</div>
 			</div>
 			<div id="contato" class="page verticalContainer textContainer">
 					Faça sua reserva pelo telefone<br />
 					<h3>(54)3275-1263</h3><br />
 					ou pelo e-mail<br />
-					<h3><a href="mailto:atendimento@hotelalvi.com.br">atendimento@hotelalvi.com.br</a></h3>
+					<h3><a href="mailto:atendimento@hotelalvi.com.br" style="color:black;">atendimento@hotelalvi.com.br</a></h3>
 			</div>
 		</div>
 		<div id="currentPageIndicator">
@@ -194,24 +195,22 @@
 				</svg>
 			</div>
 		</div>
-		<div class="buttonContainer" id="scrollToTopButton" onclick="javascript: window.scrollTo({top:0, behavior: 'smooth'});">
+		<div class="buttonContainer" id="scrollToTopButton" onclick="window.scrollTo({top:0, behavior: 'smooth'});">
 			<div style="width:90%;">
 				Voltar para o topo.
 			</div>
 		</div>
 		<footer>
-			<div style="display:flex;flex-wrap:wrap;">
-				<div style="display:flex;">
-					<iframe style="align-self:center;" id="gmap_canvas" src='https://maps.google.com/maps?q=Alvi%20Hotel&t=&z=16&ie=UTF8&iwloc=&output=embed' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-				</div>
-				<div style="margin-left:8px;">
-					<h4>ENDEREÇO</h4>
-					<a href="https://goo.gl/maps/tXc6NbnZjg8SaWdd9" style="text-decoration:none;color:black;align-self:end;">Avenida 12 de Abril, 34<br />Nova Araçá/RS</a>
-				</div>
+			<div style="margin-left:8px;">
+				<h4>ENDEREÇO</h4>
+				<a href="https://goo.gl/maps/tXc6NbnZjg8SaWdd9" style="text-decoration:none;color:black;align-self:end;">Avenida 12 de Abril, 34<br />Nova Araçá/RS</a>
 			</div>
-			<div class="iconWrapper">
-				<a href="https://www.facebook.com/hotelalvi/" target="_blank">
-					<img src="imagens/facebook.png" style="width:100%;height:100%;" />
+			<div style="display:flex;">
+				<iframe style="align-self:center;" id="gmap_canvas" src='https://maps.google.com/maps?q=Alvi%20Hotel&t=&z=16&ie=UTF8&iwloc=&output=embed' frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			</div>
+			<div>
+				<a href="https://www.facebook.com/hotelalvi/" target="_blank" style="display:inline-flex;align-items:center;color:black;">
+					<img src="imagens/facebook.png" style="display:inline;max-width:50px;max-height:50px;" /><span>facebook.com/hotelalvi</span>
 				</a>
 			</div>
 		</footer>
