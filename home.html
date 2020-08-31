@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="initial-scale=1.0">
-	<meta name="description" content="Localizado em local calmo no centro de Nova Araçá, possui garagem semi-aberta, recepção com lareira e quartos com banheiro, climatizador e frigobar." />
-	<meta name="keywords" content="hotel, hoteis, hotéis, nova araçá, nova araca, hotel nova bassano, hotel paraí, hotel parai, hotel barato, cafe, café, café da manhã, cafe da manha" />
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0">
+		<meta name="description" content="Com mais de 20 anos de história no ramo de hospedagem, o Hotel Alvi oferece um ambiente aconchegante e calmo no centro de Nova Araçá. Hall com lareira e quartos com banheiro, climatizador e frigobar." />
+		<meta name="keywords" content="hotel, hoteis, hotéis, nova araçá, nova araca, hotel nova bassano, hotel paraí, hotel parai, hotel barato, cafe, café, café da manhã, cafe da manha" />
 
-	<title>Hotel Alvi - Nova Araçá/RS</title>
+		<title>Hotel Alvi - Nova Araçá/RS</title>
 
-	<link rel="stylesheet" type="text/css" href="styles.css" />
-	<link rel="stylesheet" type="text/css" href="animations.css" />
-	<script src="imageSwitcher.js"></script>
-	<script defer src="quartos.js"></script>
-	<script defer src="scroll.js"></script>
-	<script defer src="comida.js"></script>
-</head>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<link rel="stylesheet" type="text/css" href="animations.css" />
+		<script src="imageSwitcher.js"></script>
+		<script defer src="quartos.js"></script>
+		<script defer src="scroll.js"></script>
+		<script defer src="comida.js"></script>
+	</head>
 	<body>
 		<div class="verticalContainer" id="mainContainer">
 			<img src="imagens/logo.jpg" id="logo">
@@ -112,12 +112,12 @@
 				<div id="comidaButtonList" class="buttonList" style="align-self:stretch;border-right-width:thick;">
 					<div data-category-id="0" onclick="comida.categorySwitch(0);">
 						<div>
-							<svg viewBox="0 0 100 100" height="1em" width="1em" class="comidaCategoryArrow" onclick="comida.categorySwitch(2);">
+							<svg viewBox="0 0 100 100" height="1em" width="1em" class="comidaCategoryArrow" onclick="comida.categorySwitch(1);">
 								<circle cx="50" cy="50" r="45" stroke="#000000" stroke-width="10" fill="#FFFFFF" />
 								<polygon points="20,50 50,30 50,45 80,45 80,55 50,55 50,70" fill="#000000" stroke-width="0" />
 							</svg>
 						</div>
-						<div>RESTAURANTE</div>
+						<div>CAFÉ</div>
 						<div>
 							<svg viewBox="0 0 100 100" height="1em" width="1em" class="comidaCategoryArrow" onclick="comida.categorySwitch(1);">
 								<circle cx="50" cy="50" r="45" stroke="#000000" stroke-width="10" fill="#FFFFFF" />
@@ -132,21 +132,6 @@
 								<polygon points="20,50 50,30 50,45 80,45 80,55 50,55 50,70" fill="#000000" stroke-width="0" />
 							</svg>
 						</div>
-						<div>CAFÉ</div>
-						<div>
-							<svg viewBox="0 0 100 100" height="1em" width="1em" class="comidaCategoryArrow" onclick="comida.categorySwitch(2);">
-								<circle cx="50" cy="50" r="45" stroke="#000000" stroke-width="10" fill="#FFFFFF" />
-								<polygon points="80,50 50,30 50,45 20,45 20,55 50,55 50,70" fill="#000000" stroke-width="0" />
-							</svg>
-						</div>
-					</div>
-					<div data-category-id="2" onclick="comida.categorySwitch(2);">
-						<div>
-							<svg viewBox="0 0 100 100" height="1em" width="1em" class="comidaCategoryArrow" onclick="comida.categorySwitch(1);">
-								<circle cx="50" cy="50" r="45" stroke="#000000" stroke-width="10" fill="#FFFFFF" />
-								<polygon points="20,50 50,30 50,45 80,45 80,55 50,55 50,70" fill="#000000" stroke-width="0" />
-							</svg>
-						</div>
 						<div>JANTA</div>
 						<div>
 							<svg viewBox="0 0 100 100" height="1em" width="1em" class="comidaCategoryArrow" onclick="comida.categorySwitch(0);">
@@ -155,6 +140,9 @@
 							</svg>
 						</div>
 					</div>
+					<!--<div style="background:none;border:none;animation:none;cursor:initial;">
+						PLACEHOLDER
+					</div>-->
 				</div>
 				<div id="comidaImageContainer">
 					<img src="imagens/restaurante.jpg" id="comidaImage" style="height:100%;width:100%;" />
@@ -184,7 +172,7 @@
 			<div id="currentPageIndicatorBody">
 				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[0].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">INÍCIO</div></div>
 				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">QUARTOS</div></div>
-				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[2].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">SALA</div></div>
+				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[2].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">HALL</div></div>
 				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[3].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">RESTAURANTE</div></div>
 				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[4].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">CONTATO</div></div>
 			</div>

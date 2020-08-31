@@ -298,6 +298,10 @@
 	min-width: 15%;
 	flex-grow: 1;
 }
+#comidaButtonList > div{
+	max-height:33%;
+	border-bottom-style:solid;
+}
 #comida > div:last-child{
 	min-width:15%;
 	border-right: none;

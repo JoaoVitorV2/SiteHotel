@@ -2,21 +2,20 @@ var comida = (function () {
 	var image = document.getElementById("comidaImage");
 	var text = document.getElementById("comidaText");
 	var buttonList = document.getElementById("comidaButtonList");
+	var Category = function (images, text) {
+		this.images = images;
+		this.text = text;
+	};
 	var categories = [
-		[new ImageSwitcher(image, ["imagens/restaurante.jpg"]), "O restaurante do Hotel Alvi oferece uma janta especial, exclusiva para hóspedes e reconhecida como uma das melhores da cidade."],
-		[new ImageSwitcher(image,["imagens/cafe.jpg", "imagens/cafe2.jpg"]), "TEXTO CAFE"],
-		[new ImageSwitcher(image, ["imagens/janta.jpg", "imagens/janta2.jpg"]), "O restaurante do Hotel Alvi oferece uma janta especial, exclusiva para hóspedes e reconhecida como uma das melhores da cidade."]
+		new Category(new ImageSwitcher(image, ["imagens/cafe.jpg", "imagens/cafe2.jpg"]), ""),
+		new Category(new ImageSwitcher(image, ["imagens/janta.jpg", "imagens/janta2.jpg"]), "O restaurante do Hotel Alvi oferece uma janta especial, exclusiva para hóspedes e reconhecida como uma das melhores da cidade.")
 	];
 
-	var currentCategory = 0;
+	var currentCategory = -1;
 	var queuedCategory = -1;
 
 	var imageSwitch = function (direction) {
-		if (currentCategory == 0) {
-			console.error("Multiple images disabled for current item.");
-		} else {
-			categories[currentCategory][0].switch(direction);
-		}
+		categories[currentCategory].images.switch(direction);
 	};
 
 	var ANIMATION_TIME = 1000;
@@ -33,17 +32,15 @@ var comida = (function () {
 			text.style.setProperty('animation', 'fade ' + ANIMATION_TIME/1000 + 's 1');
 			currentCategory = selected;
 			setTimeout(function () {
-				categories[currentCategory][0].switch(0);
-				text.innerHTML = categories[currentCategory][1];
-			}, 500);
+				categories[currentCategory].images.switch(0);
+				text.innerHTML = categories[currentCategory].text;
+			}, ANIMATION_TIME/2);
 			document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "none");
 			document.getElementsByClassName("comidaImageButton")[1].style.setProperty("display", "none");
-			if (selected != 0) { //selected=0 has only one image
-				setTimeout(function () {
-					document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "initial");
-					document.getElementsByClassName("comidaImageButton")[1].style.setProperty("display", "initial");
-				}, 1000);
-			}
+			setTimeout(function () {
+				document.getElementsByClassName("comidaImageButton")[0].style.setProperty("display", "initial");
+				document.getElementsByClassName("comidaImageButton")[1].style.setProperty("display", "initial");
+			}, ANIMATION_TIME);
 		}
 		setTimeout(function () { image.style.removeProperty('animation'); }, ANIMATION_TIME);
 		setTimeout(function () { text.style.removeProperty('animation'); }, ANIMATION_TIME);
