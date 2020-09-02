@@ -47,7 +47,7 @@
 .buttonList > div{
 	border-style:solid none;
 	border-width:thick;
-	border-color:#FFFFFF;
+	border-color:#000000;
 	text-align:center;
 	flex-grow:1;
 	display:flex;
@@ -298,9 +298,8 @@
 	min-width: 15%;
 	flex-grow: 1;
 }
-#comidaButtonList > div{
-	max-height:33%;
-	border-bottom-style:solid;
+#comidaButtonList > div:first-child{
+	border-bottom:none;
 }
 #comida > div:last-child{
 	min-width:15%;
