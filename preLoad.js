@@ -6,5 +6,5 @@ let imageCache = {
 };
 
 for (var arr in imageCache) {
-	arr.forEach((url) => { var img = new Image(); img.src = url; });
+	imageCache[arr].forEach((url) => { var img = new Image(); img.src = url; });
 }
