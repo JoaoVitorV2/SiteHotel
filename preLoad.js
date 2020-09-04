@@ -8,7 +8,7 @@ var imageCache = (function() {
 	var essentials = ["imagens/logo.jpg", "imagens/vista.jpg"];
 
 	var load = function () {
-		for (i = 0; i < essentials.size; i++) {
+		for (i = 0; i < essentials.length; i++) {
 			var img = new Image();
 			img.onload = imageCache.checkEssentialsLoaded;
 			img.src = essentials[i];
@@ -19,7 +19,7 @@ var imageCache = (function() {
 			checkEssentialsLoaded.count = 0;
 		}
 		checkEssentialsLoaded.count++;
-		if (checkEssentialsLoaded == essentials.size) {
+		if (checkEssentialsLoaded == essentials.length) {
 			loadRest();
 		}
 	}
