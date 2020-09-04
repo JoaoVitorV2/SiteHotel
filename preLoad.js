@@ -1,4 +1,6 @@
 let imageCache = {
+	logo: ["imagens/logo.jpg"],
+	vista: ["imagens/vista.jpg"],
 	ap: ["imagens/apartamento_cama.jpg", "imagens/apartamento_banheiro_temp.jpg", "imagens/apartamento.jpg", "imagens/apartamento_frigobar.jpg", "imagens/apartamento_ar.jpg"],
 	qt: ["imagens/quarto.jpg", "imagens/quarto_tv.jpg"],
 	cafe: ["imagens/cafe.jpg", "imagens/cafe2.jpg"],
