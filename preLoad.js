@@ -11,7 +11,7 @@ var imageCache = (function() {
 		for (var i = 0; i < essentials.size; i++) {
 			var img = new Image();
 			img.src = essentials[i];
-			img.onload = checkEssentialsLoaded;
+			img.onload = imageCache.checkEssentialsLoaded;
 		}
 	}
 	var checkEssentialsLoaded = function () {
@@ -31,7 +31,8 @@ var imageCache = (function() {
 
 	return {
 		list: list,
-		load: load
+		load: load,
+		checkEssentialsLoaded: checkEssentialsLoaded
 	}
 })();
 
