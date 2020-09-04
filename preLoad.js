@@ -10,8 +10,8 @@ var imageCache = (function() {
 	var load = function () {
 		for (i = 0; i < essentials.size; i++) {
 			var img = new Image();
-			img.src = essentials[i];
 			img.onload = imageCache.checkEssentialsLoaded;
+			img.src = essentials[i];
 		}
 	}
 	var checkEssentialsLoaded = function () {
