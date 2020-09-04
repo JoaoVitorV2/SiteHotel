@@ -7,8 +7,8 @@ var comida = (function () {
 		this.text = text;
 	};
 	var categories = [
-		new Category(new ImageSwitcher(image, imageCache.cafe), ""),
-		new Category(new ImageSwitcher(image, imageCache.janta), "O restaurante do Hotel Alvi oferece uma janta especial, exclusiva para hóspedes e reconhecida como uma das melhores da cidade.")
+		new Category(new ImageSwitcher(image, imageCache.list.cafe), ""),
+		new Category(new ImageSwitcher(image, imageCache.list.janta), "O restaurante do Hotel Alvi oferece uma janta especial, exclusiva para hóspedes e reconhecida como uma das melhores da cidade.")
 	];
 
 	var currentCategory = -1;

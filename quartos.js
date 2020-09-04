@@ -2,8 +2,8 @@ var quartos = (function () {
 	var page = document.getElementById("quartos");
 	var slideButtons = [document.getElementById("quartosSlideButtonLeft"), document.getElementById("quartosSlideButtonRight")];
 	var images = [
-		new ImageSwitcher(page.children[0].children[1].children[2], imageCache.ap),
-		new ImageSwitcher(page.children[1].children[1].children[2], imageCache.qt)
+		new ImageSwitcher(page.children[0].children[1].children[2], imageCache.list.ap),
+		new ImageSwitcher(page.children[1].children[1].children[2], imageCache.list.qt)
 	];
 
 	var imageSwitch = function (type, direction) {
