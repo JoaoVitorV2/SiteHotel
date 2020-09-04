@@ -19,7 +19,7 @@ var imageCache = (function() {
 			checkEssentialsLoaded.count = 0;
 		}
 		checkEssentialsLoaded.count++;
-		if (checkEssentialsLoaded == essentials.length) {
+		if (checkEssentialsLoaded.count == essentials.length) {
 			loadRest();
 		}
 	}
@@ -32,7 +32,8 @@ var imageCache = (function() {
 	return {
 		list: list,
 		load: load,
-		checkEssentialsLoaded: checkEssentialsLoaded
+		checkEssentialsLoaded: checkEssentialsLoaded,
+		loadRest: loadRest
 	}
 })();
 
