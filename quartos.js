@@ -2,8 +2,8 @@ var quartos = (function () {
 	var page = document.getElementById("quartos");
 	var slideButtons = [document.getElementById("quartosSlideButtonLeft"), document.getElementById("quartosSlideButtonRight")];
 	var images = [
-		new ImageSwitcher(page.children[0].children[1].children[2], ["imagens/apartamento_cama.jpg", "imagens/apartamento_banheiro_temp.jpg", "imagens/apartamento.jpg", "imagens/apartamento_frigobar.jpg", "imagens/apartamento_ar.jpg"]),
-		new ImageSwitcher(page.children[1].children[1].children[2], ["imagens/quarto.jpg", "imagens/quarto_tv.jpg"])
+		new ImageSwitcher(page.children[0].children[1].children[2], imageCache.ap),
+		new ImageSwitcher(page.children[1].children[1].children[2], imageCache.qt)
 	];
 
 	var imageSwitch = function (type, direction) {

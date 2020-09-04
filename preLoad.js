@@ -5,6 +5,6 @@ let imageCache = {
 	janta: ["imagens/janta.jpg", "imagens/janta2.jpg"]
 };
 
-imageCache.ap.forEach(
-	(url) => { var img = new Image(); img.src = url; },
-);
+for (var arr in imageCache) {
+	arr.forEach((url) => { var img = new Image(); img.src = url; });
+}
