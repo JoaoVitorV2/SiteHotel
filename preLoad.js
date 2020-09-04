@@ -1,6 +1,6 @@
 var imageCache = (function() {
 	var list = {
-		logo: ["imagens/logo.jpg"],
+		//logo: ["imagens/logo.jpg"],
 		vista: ["imagens/vista.jpg"],
 		ap: ["imagens/apartamento_cama.jpg", "imagens/apartamento_banheiro_temp.jpg", "imagens/apartamento.jpg", "imagens/apartamento_frigobar.jpg", "imagens/apartamento_ar.jpg"],
 		qt: ["imagens/quarto.jpg", "imagens/quarto_tv.jpg"],
