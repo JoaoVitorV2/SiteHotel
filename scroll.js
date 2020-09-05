@@ -68,6 +68,13 @@ var scrollPagesIndicator = (function () {
 	}
 })();
 
+function scrollToPage(page){
+	var OFFSET = 35;
+	var current = document.documentElement.scrollTop;
+	var target = document.documentElement.scrollTop + page.getBoundingClientRect().y - OFFSET;
+	window.scrollTo({ top: target, behavior:"smooth", block: "start" });
+}
+
 window.addEventListener('scroll', scrollToTopButton.decideShow);
 window.addEventListener('scroll', scrollPagesIndicator.decideShow);
 window.addEventListener('resize', scrollToTopButton.decideShow);

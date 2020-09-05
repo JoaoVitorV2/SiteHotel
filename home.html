@@ -20,8 +20,8 @@
 		<div class="verticalContainer" id="mainContainer">
 			<img src="imagens/logo.jpg" id="logo">
 			<div class="buttonContainer" id="navbar">
-				<div onclick="document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'start' });"><span>CONHEÇA</span></div>
-				<div onclick="document.getElementsByClassName('page')[document.getElementsByClassName('page').length-1].scrollIntoView({ behavior: 'smooth', block: 'start' });"><span>CONTATO</span></div>
+				<div onclick="scrollToPage(document.getElementById('quartos'));"><span>CONHEÇA</span></div>
+				<div onclick="scrollToPage(document.getElementById('contato'));"><span>CONTATO</span></div>
 			</div>
 			<div id="textoInicial" class="page verticalContainer textContainer faded">
 				<p>Com mais de 20 anos de história no ramo de hospedagem, o Hotel Alvi oferece um ambiente aconchegante e calmo no centro de Nova Araçá.</p>
@@ -184,11 +184,11 @@
 		</div>
 		<div id="currentPageIndicator">
 			<div id="currentPageIndicatorBody">
-				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[0].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">INÍCIO</div></div>
-				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[1].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">QUARTOS</div></div>
-				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[2].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">HALL</div></div>
-				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[3].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">RESTAURANTE</div></div>
-				<div class="buttonContainer" onclick="document.getElementsByClassName('page')[4].scrollIntoView({ behavior: 'smooth', block: 'start'});"><div class="buttonContainer-div currentPageIndicator-div-div">CONTATO</div></div>
+				<div class="buttonContainer" onclick="scrollToPage(document.getElementsByClassName('page')[0]);"><div>INÍCIO</div></div>
+				<div class="buttonContainer" onclick="scrollToPage(document.getElementsByClassName('page')[1]);"><div>QUARTOS</div></div>
+				<div class="buttonContainer" onclick="scrollToPage(document.getElementsByClassName('page')[2]);"><div>HALL</div></div>
+				<div class="buttonContainer" onclick="scrollToPage(document.getElementsByClassName('page')[3]);"><div>RESTAURANTE</div></div>
+				<div class="buttonContainer" onclick="scrollToPage(document.getElementsByClassName('page')[4]);"><div>CONTATO</div></div>
 			</div>
 			<div id="currentPageIndicatorShow" onclick="scrollPagesIndicator.slide();">
 				<svg viewBox="0 0 100 100" width="100%" height="100%">
