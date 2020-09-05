@@ -243,6 +243,11 @@
 .quartosImageButton{
 	display:none;
 }
+@media (max-width:1300px) {
+	#quartos > div > div:first-child > ul {
+		font-size: 1.8vw;
+	}
+}
 @media (max-width:810px){
 	#quartosSlideButtonRight {
 		display: flex;
@@ -256,7 +261,7 @@
 	}
 	#quartos > div > div:first-child > ul{
 		padding-left:2px;
-		font-size:4vw;
+		font-size:3.5vw;
 	}
 	#quartos > div:first-child > div:first-child > h2{
 		align-self:flex-start;
