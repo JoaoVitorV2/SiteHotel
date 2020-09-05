@@ -307,8 +307,13 @@
 	min-width: 15%;
 	flex-grow: 1;
 }
-#comidaButtonList > div:first-child{
-	border-bottom:none;
+#comidaButtonList > div{
+	border-top:none;
+}
+#comidaButtonListMenu{
+	justify-content:space-between;
+	display:none;
+	border:none;
 }
 #comida > div:last-child{
 	min-width:15%;
@@ -333,7 +338,10 @@
 	display:none;
 	cursor:pointer;
 }
-@media (max-aspect-ratio:3/2){
+@media (max-aspect-ratio:2/1){
+	#comida{
+		height:max-content;
+	}
 	#comida{
 		flex-wrap:wrap;
 	}
@@ -364,6 +372,13 @@
 		justify-content:space-evenly;
 		cursor:default;
 	}
+	#comidaButtonListMenu{
+		display:flex;
+	}
+	#comidaButtonListMenu > div{
+		display:flex;
+		align-items:center;
+	}
 	.comidaCategoryArrow{
 		display:initial;
 	}
@@ -376,11 +391,11 @@
 	#comida > div{
 		border-right:none;
 		border-top:solid;
-		width:100vw;
+		width:100%;
 		height:auto;
 	}
 	#comidaImageContainer {
-		width: 100vw !important;
+		width: 100% !important;
 		height: 80vw !important; /*Width is 100vw(width)/1,25(image aspect ratio).*/
 	}
 }

@@ -20,6 +20,7 @@ var comida = (function () {
 
 	var ANIMATION_TIME = 1000;
 	var categorySwitch = async function (selected) {
+		document.getElementById("comidaButtonListMenu").style.setProperty("display", "none");
 		if (window.innerWidth / window.innerHeight <= 10 / 8) {
 			buttonList.scrollTo({ left: buttonList.clientWidth * selected, top: 0, behavior: "smooth" });
 		}
@@ -58,7 +59,7 @@ var comida = (function () {
 	var aspectRatioTall = false;
 	var aspectRatioCheck = function () {
 		var newAspectRatioTall = window.innerWidth / window.innerHeight <= 10 / 8;
-		if (!(aspectRatioTall == newAspectRatioTall)) {
+		if (aspectRatioTall != newAspectRatioTall) {
 			aspectRatioTall = newAspectRatioTall;
 			if (aspectRatioTall == false) {
 				for (element of document.querySelectorAll("#comidaButtonList > div")) {
@@ -67,6 +68,9 @@ var comida = (function () {
 			} else {
 				for (element of document.querySelectorAll("#comidaButtonList > div")) {
 					element.removeAttribute("onclick");
+				}
+				if (currentCategory >= 0) {
+					categorySwitch(0);
 				}
 			}
 		}

@@ -26,6 +26,7 @@ var imageCache = (function() {
 		checkLoaded.count++;
 		if (checkLoaded.count == imageCount) {
 			document.querySelectorAll(".page").forEach((element) => { element.style.opacity = "1"; });
+			//TODO: loading screen instead of blank page
 		}
 	}
 
