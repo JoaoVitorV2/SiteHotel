@@ -23,7 +23,7 @@
 	display:flex;
 	border-style:solid;
 	border-width:thick;
-	border-color:#000000;
+	border-color:#FFFFFF;
 	border-radius:12px;
 	overflow:hidden;
 	opacity:0;
@@ -34,6 +34,7 @@
 		border-width:medium;
 		border-radius:0;
 		height:max-content;
+		border-color:#000000;
 	}
 }
 
@@ -47,7 +48,7 @@
 }
 .buttonList > div{
 	border-style:solid none;
-	border-width:thick;
+	border-width:medium;
 	border-color:#000000;
 	text-align:center;
 	flex-grow:1;
@@ -311,6 +312,7 @@
 	width: max-content;
 	min-width: 15%;
 	flex-grow: 1;
+	border:solid;
 }
 #comidaButtonList > div{
 	border-top:none;
