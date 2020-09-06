@@ -77,7 +77,7 @@ var quartos = (function () {
 	var slide = function (side) {
 		slideButtons[side].style.display = "none";
 		slideButtons[(side - 1) * -1].style.display = "flex"; //(side-1)*-1 = opposite side
-		page.children[side].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+		page.children[side].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
 	}
 
 	return {

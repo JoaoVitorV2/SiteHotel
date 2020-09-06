@@ -175,7 +175,7 @@
 
 #textoInicial {
 	padding: 0;
-	font-size: 2em;
+	font-size: 1.7em;
 	background-image: url('imagens/vista.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -197,8 +197,8 @@
 #quartos > div{
 	width:50%;
 	height:100%;
-	border-left:solid;
-	border-right:solid;
+	border-style:none solid;
+	border-width:thin;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
@@ -306,13 +306,13 @@
 }
 
 #comida > div {
-	border-right: solid;
+	border-right: solid thin;
 }
 #comidaButtonList {
 	width: max-content;
 	min-width: 15%;
 	flex-grow: 1;
-	border:solid;
+	border:solid medium !important;
 }
 #comidaButtonList > div{
 	border-top:none;
@@ -346,19 +346,27 @@
 	cursor:pointer;
 }
 @media (max-aspect-ratio:2/1){
-	#comida{
-		height:max-content;
+	#comida {
+		height: max-content;
+		flex-wrap: wrap;
 	}
-	#comida{
-		flex-wrap:wrap;
+	#comidaButtonList{
+		border-style: none solid !important;
+	}
+	#comidaButtonList > div:first-child{
+		border-top:none;
+	}
+	#comidaButtonList > div:last-child {
+		border-bottom: none;
+	}
+	#comidaImageContainer {
+		border-right: none !important;
 	}
 	#comida > div:last-child{
 		border-top:solid medium;
 		flex-basis:100%;
 	}
-	#comidaImageContainer{
-		border-right:none !important;
-	}
+	
 }
 @media (max-aspect-ratio:10/8){
 	#comida{
