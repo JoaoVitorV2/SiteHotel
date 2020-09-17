@@ -1,3 +1,5 @@
+/*TODO: reorganize CSS*/
+
 .verticalContainer{
 	margin:0;
 	padding:0;
@@ -24,11 +26,10 @@
 	border-style:solid;
 	border-width:thick;
 	border-color:#FFFFFF;
-	border-radius:12px;
 	overflow:hidden;
 	opacity:0;
 }
-@media (max-width:1300px){
+@media (max-width:1300px), (max-aspect-ratio:10/8){
 	.page{
 		border-style:solid none;
 		border-width:medium;
@@ -137,10 +138,10 @@
 	width:75%;
 	min-height:100vh;
 }
-@media (max-width:1300px){
+@media (max-width:1300px), (max-aspect-ratio:10/8) {
 	#mainContainer {
-		min-width:100%;
-		margin:0;
+		min-width: 100%;
+		margin: 0;
 	}
 }
 
@@ -162,7 +163,7 @@
 	margin: 1px 3px;
 	width:50%;
 }
-@media (max-width:1300px){
+@media (max-width:1300px), (max-aspect-ratio:10/8){
 	#navbar{
 		box-sizing:border-box;
 		border-radius:0;
@@ -267,6 +268,7 @@
 	#quartos > div:first-child > div:first-child > h2{
 		align-self:flex-start;
 		margin-left:0;
+		font-size:5vw;
 	}
 	#quartos > div:last-child > div:first-child > h2{
 		align-self:flex-end;
@@ -312,7 +314,9 @@
 	width: max-content;
 	min-width: 15%;
 	flex-grow: 1;
-	border:solid medium !important;
+	border: solid medium !important;
+	border-radius: 12px 0 0 12px;
+	overflow: hidden;
 }
 #comidaButtonList > div{
 	border-top:none;
@@ -321,6 +325,7 @@
 	justify-content:space-between;
 	display:none;
 	border:none;
+	border-top: none !important;
 }
 #comida > div:last-child{
 	min-width:15%;
@@ -331,12 +336,13 @@
 	display: none;
 }
 #comidaImageContainer {
-	position:relative;
-	display:flex;
-	justify-content:center;
-	height:80vh; 
-	width:100vh; /*Width is 80vh(height)*1,25(image aspect ratio).*/
-	flex-shrink:0;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	height: 80vh;
+	width: 100vh; /*Width is 80vh(height)*1,25(image aspect ratio).*/
+	max-width: 60vw;
+	flex-shrink: 0;
 }
 #comidaImage{
 	z-index:-1;
@@ -351,19 +357,18 @@
 		flex-wrap: wrap;
 	}
 	#comidaButtonList{
-		border-style: none solid !important;
+		border-style: solid;
 	}
 	#comidaButtonList > div:first-child{
-		border-top:none;
+		border-top:solid;
 	}
 	#comidaButtonList > div:last-child {
 		border-bottom: none;
 	}
 	#comidaImageContainer {
-		border-right: none !important;
+		border-style:none !important;
 	}
 	#comida > div:last-child{
-		border-top:solid medium;
 		flex-basis:100%;
 	}
 	
@@ -377,6 +382,10 @@
 		flex-direction:row;
 		overflow:hidden;
 		border-top:none;
+	}
+	#comidaButtonList{
+		border-radius:0;
+		border-style: none none solid none !important;
 	}
 	#comidaButtonList > div{
 		width:100vw;
@@ -412,6 +421,30 @@
 	#comidaImageContainer {
 		width: 100% !important;
 		height: 80vw !important; /*Width is 100vw(width)/1,25(image aspect ratio).*/
+		max-width: unset;
+	}
+}
+@media (max-width:1300px) {
+	#comidaButtonList {
+		border-radius: 0;
+		border-style: none solid none none !important;
+	}
+	@media (max-aspect-ratio:2/1){
+		#comidaButtonList{
+			border-bottom-style:solid !important;
+		}
+		#comidaImageContainer{
+			border-bottom-style: solid !important;
+		}
+	}
+	@media (max-aspect-ratio:10/8) {
+		#comidaButtonList {
+			border-top: none !important;
+		}
+
+		#comidaImageContainer {
+			border-bottom: none !important;
+		}
 	}
 }
 
@@ -462,23 +495,26 @@
 	opacity:0.5;
 	cursor:pointer;
 }
-@media (max-width:1300px) {
+@media (max-width:1300px), (max-aspect-ratio:10/8) {
 	#currentPageIndicator {
-		left:-1px;
-		width:1em;
+		left: -1px;
+		width: 1em;
 	}
+
 	#currentPageIndicatorBody {
 		border: solid 1px;
-		border-left:none;
+		border-left: none;
 		border-top-right-radius: 6px;
 		border-bottom-right-radius: 6px;
-		background-color:#FFFFFF;
-		flex:0;
+		background-color: #FFFFFF;
+		flex: 0;
 		transition: flex 1s;
 	}
-	#currentPageIndicatorBody>div{
-		margin:0 4px;
-	}
+
+		#currentPageIndicatorBody > div {
+			margin: 0 4px;
+		}
+
 	#currentPageIndicatorShow {
 		display: flex;
 	}

@@ -3,7 +3,7 @@ var scrollToTopButton = (function () {
 	var navbar = document.getElementById('navbar');
 
 	var decideShow = function () {
-		if (navbar.getBoundingClientRect().bottom < 0 && window.innerWidth>1300) {
+		if (navbar.getBoundingClientRect().bottom < 0 && (window.innerWidth > 1300 && window.innerWidth / window.innerHeight>10/8)) {
 			element.style.setProperty('display', 'flex');
 		} else {
 			element.style.setProperty('display', 'none');
